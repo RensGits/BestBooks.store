@@ -1,0 +1,13 @@
+.allbooks-page-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.allbooks-content-container{
+    display: flex;
+    height: 100vh;
+    padding: 2em;
+    background-color: #F9F9F9;
+}

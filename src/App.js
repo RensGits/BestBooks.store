@@ -1,8 +1,8 @@
 import './App.css';
-import LoginRegister from './components/login-register/LoginRegister.js';
+import LoginRegister from './components/loginRegister/LoginRegister.js';
 import NavigationBar from './components/navigation/NavigationBar.js';
-import AllBooks from './pages/all-books/AllBooks.js';
-import BrowseLists from './pages/browse-lists/BrowseLists.js';
+import AllBooks from './components/Pages/allBooksPage/AllBooks';
+import BrowseLists from './components/Pages/browseListsPage/BrowseLists';
 import {
   BrowserRouter,
   Routes,

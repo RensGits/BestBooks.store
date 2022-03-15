@@ -1,0 +1,12 @@
+.pagination-container{
+    display: flex;
+    justify-content: space-between;
+    width: 14em;
+    padding-top: 1em;
+}
+
+.pagination-container p{
+    padding-left: 0.2em;
+    font-family: 'Carme';
+    font-size: 0.8rem;
+}
