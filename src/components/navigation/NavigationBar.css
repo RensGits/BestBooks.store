@@ -1,0 +1,24 @@
+.navigationbar-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2em;
+    background-color: antiquewhite;
+}
+
+.navigationbar-items-container{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding-right: 4em;
+    
+    
+}
+
+
+.navigationbar-item{
+    width: fit-content;
+}
+
+
+

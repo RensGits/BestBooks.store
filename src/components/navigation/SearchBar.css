@@ -1,0 +1,24 @@
+.searchbar-container{
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+.searchbar-input{
+    height: 90%;
+    width: 100%;
+    margin-left: 7em;
+    padding-left: 3em;
+    border-style: none;
+    background-color: #F9F9F9;
+    font-family: 'Carme';
+    font-size: 0.9rem
+}
+
+.search-icon{
+    position: absolute;
+    width: 1em;
+    left: 6em;
+}
