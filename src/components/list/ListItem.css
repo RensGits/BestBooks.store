@@ -1,0 +1,23 @@
+.list-item-container{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 9em;
+    height: 12em;
+}
+
+.list-item-rank{
+    position: absolute;
+    width: fit-content;
+    top: 0;
+    right: 0;
+    font-family: 'Carme';
+    font-size: 0.9rem;
+    color: #848484
+}
+
+.list-item-image{
+    width: 6em;
+    height: auto;
+}

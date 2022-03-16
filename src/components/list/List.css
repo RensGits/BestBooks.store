@@ -1,0 +1,19 @@
+.list-container{
+    position: relative;
+}
+
+.list-title-container{
+    width: fit-content;
+    position: absolute;
+    right:-6em;
+}
+
+.books-grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 8em 6em 0em 6em;
+}
+
+.list-indicator{
+    color: red;
+}

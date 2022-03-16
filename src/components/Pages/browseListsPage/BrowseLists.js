@@ -4,6 +4,8 @@ import _ from 'lodash'
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchAllLists } from '../../../redux/slices/allListsSlice'
+import Underline from '../../underline/Underline';
+import { Link } from 'react-router-dom';
 
 
 
@@ -20,9 +22,14 @@ export default function BrowseLists(){
     
     return(
         <div className='browselists-page-container'>
-            <p>New York Times Lists </p>
+            <div className='lists-spacer'></div>
+            <div className='underline-container'>
+                <p>New York Times Lists </p>
+                <Underline cName="underline" />
+            </div>
+            
             {loadingState === 'loading' &&
-                <p>loading...</p>
+                <p className='loading-indicator'>loading...</p>
             }
             {loadingState === 'rejected' &&
                 <p>Something went wrong. Please refresh this page and see if the error resolves. If not please contact our service-desk.</p>
@@ -32,8 +39,9 @@ export default function BrowseLists(){
                 <div className='list-grid-container'>
                     {
                         _.map(listData.results,'list_name').map((item)=>{
+                            const list = item.split(' ').join('-').toLowerCase();
                             return(
-                                <p className='list-item'>{item}</p>
+                                <Link to={`/browse-lists/${list}`}><p className='list-item'>{item}</p></Link>
                             )
                         })
                     }

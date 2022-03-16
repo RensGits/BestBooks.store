@@ -2,3 +2,22 @@
   padding: 3em 5em;
 }
 
+.lists-spacer{
+  width: 100%;
+  height: 6em;
+}
+
+.underline-container{
+  position: relative;
+  width: fit-content;
+}
+
+.underline-extention{
+  margin-right: 2.4em;
+}
+
+.loading-indicator{
+  position: absolute;
+  top: 10em;
+}
+

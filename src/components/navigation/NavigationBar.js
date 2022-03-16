@@ -1,6 +1,7 @@
 import './NavigationBar.css'
 import SearchBar from './SearchBar'
 import { NavLink, useLocation } from 'react-router-dom'
+import Underline from '../underline/Underline.js'
 
 export default function NavigationBar(){
 
@@ -11,18 +12,17 @@ export default function NavigationBar(){
     return(
         <div className='navigationbar-container'>
             <ul className='navigationbar-items-container'>
-                <div className='navigationbar-item-container'>
+                <div className='underline-container'>
                     <NavLink to="/" className={activeStyle}>All books</NavLink>
                     {route.pathname ==='/' &&
-                        <hr className='navigationbar-item-underline'/>
+                        <Underline cName="underline" />
                     }
                 </div>
-                
-                <div className='navigationbar-item-container'>
+                <div className='underline-container'>
                     <NavLink to="/browse-lists" className={activeStyle}>Browse lists</NavLink>
                     {route.pathname ==='/browse-lists' &&
-                            <hr className='navigationbar-item-underline'/>
-                        }
+                        <Underline cName="underline" />
+                    }
                 </div>
             </ul>
             <SearchBar/>

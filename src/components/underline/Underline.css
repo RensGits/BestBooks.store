@@ -1,0 +1,10 @@
+.underline{
+    width: 100%;
+    height: 0.2em;
+    border: none;
+    position: absolute;
+    top: 1.4em;
+    background-color:#E7E2E0; ;
+    color: #E7E2E0;
+}
+
