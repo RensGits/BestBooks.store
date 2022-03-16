@@ -10,13 +10,15 @@ import {
 } from "react-router-dom";
 
 function App() {
+
   return (
     <div className="app">
       <div>
         <LoginRegister />
-        <NavigationBar />
+        
       </div>
       <BrowserRouter>
+      <NavigationBar />
         <Routes>
           <Route exact path="/" element={<AllBooks />} /> 
           <Route path="/browse-lists" element={<BrowseLists />} />

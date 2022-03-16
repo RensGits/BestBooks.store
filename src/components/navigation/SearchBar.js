@@ -1,12 +1,13 @@
 import './SearchBar.css'
 import { BiSearch } from 'react-icons/bi'
-import { useDispatch } from 'react-redux'
-import { updateInput } from '../../redux/slices/searchInput'
+import { useDispatch, useSelector } from 'react-redux'
+import { updateInput } from '../../redux/slices/searchInputSlice'
 
 export default function SearchBar(){
 
     const placeholderString = "Search books by author, title or ISBN"
     const dispatch = useDispatch();
+   
 
     return(
         <div className='searchbar-container'>

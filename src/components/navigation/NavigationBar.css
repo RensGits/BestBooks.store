@@ -12,6 +12,29 @@
     padding-right: 4em;
 }
 
+.navigationbar-item-container{
+    position: relative;
+    width: fit-content;
+}
+
 .navigationbar-item{
     width: fit-content;
+    text-decoration: none;
+    color: black
+}
+
+.navigationbar-item-active{
+    width: fit-content;
+    text-decoration: none;
+    color: red;
+}
+
+.navigationbar-item-underline{
+    width: 100%;
+    height: 0.2em;
+    border: none;
+    position: absolute;
+    top: 1.4em;
+    background-color:#E7E2E0; ;
+    color: #E7E2E0;
 }

@@ -4,7 +4,6 @@ import Filters from './Filters'
 import BooksOverview from './BooksOverview'
 import Pagination from './Pagination'
 
-
 export default function AllBooks(){
     return(
         <div className='allbooks-page-container'>

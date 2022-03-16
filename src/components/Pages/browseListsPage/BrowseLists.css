@@ -1,0 +1,10 @@
+.list-grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.3em
+}
+
+.list-item{
+    font-size: 1rem;
+    text-decoration: underline;
+}
