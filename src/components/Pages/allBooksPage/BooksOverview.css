@@ -1,4 +1,13 @@
 .booksoverview-container{
     flex: 8;
     width: 100%;
+    overflow: scroll;
+}
+
+.booksoverview-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 3em;
+    padding: 0 2em;
 }

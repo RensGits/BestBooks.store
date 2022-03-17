@@ -1,6 +1,6 @@
 import './Pagination.css'
 
-export default function Pagination(){
+export default function Pagination(){ // PAGINATION COMPONENT FOR BOOKSOVERVIEW COMPONENT
     return(
         <div className='pagination-container'>
             <p>previous</p>

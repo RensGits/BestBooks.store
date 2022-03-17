@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 
 
-export default function BrowseLists(){
+export default function BrowseLists(){ // BROWSE LISTS COMPONENT FOR BROWSELISTS TAB
 
    
     const dispatch = useDispatch();

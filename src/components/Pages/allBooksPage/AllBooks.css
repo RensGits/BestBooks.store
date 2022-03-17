@@ -7,7 +7,7 @@
 
 .allbooks-content-container{
     display: flex;
-    height: 100vh;
+    height: 90vh;
     padding: 2em;
     background-color: #F9F9F9;
 }

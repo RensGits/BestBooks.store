@@ -2,10 +2,9 @@ import './AllBooks.css'
 import SortBy from '../../sortBy/SortBy'
 import Filters from './Filters'
 import BooksOverview from './BooksOverview'
-import Pagination from './Pagination'
 
-export default function AllBooks(){
-    
+export default function AllBooks(){ // ALLBOOKS PAGE
+
     return(
         <div className='allbooks-page-container'>
             <SortBy />
@@ -13,7 +12,6 @@ export default function AllBooks(){
                 <Filters />
                 <BooksOverview />
             </div>
-            <Pagination />
         </div>
     )
 }

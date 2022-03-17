@@ -1,8 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-
-// First, create the thunk
 export const fetchListBooks = createAsyncThunk(
   'books/fetchListBooks',
   async (payload) => {
@@ -12,7 +10,6 @@ export const fetchListBooks = createAsyncThunk(
   }
 )
 
-// Then, handle actions in your reducers:
 const listBooksSlice = createSlice({
   name: 'listBooks',
   initialState: { 
@@ -25,7 +22,7 @@ const listBooksSlice = createSlice({
       }
    },
   reducers: {
-    // standard reducer logic, with auto-generated action types per reducer
+
   },
   extraReducers: {
     [fetchListBooks.pending](state){
@@ -43,4 +40,3 @@ const listBooksSlice = createSlice({
 })
 
 export default listBooksSlice.reducer
-
