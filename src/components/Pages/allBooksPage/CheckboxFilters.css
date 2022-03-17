@@ -1,0 +1,31 @@
+.filter-header{
+    font-family: 'Carme';
+    font-size: 1rem;
+}
+
+.checkboxes-container{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    height: 10em;
+    overflow-y: scroll;
+    margin: 1em 0;
+    padding-right: 0.9em;
+}
+
+.checkbox-label-container{
+    display: flex;
+    align-items: center;
+    height: 2em;
+}
+
+.checkbox-label{
+    font-family: 'Carme';
+    font-size: 0.8rem;
+}
+
+.checkbox-input{
+    width: fit-content;
+    background-color: red;
+    border: none;
+}
