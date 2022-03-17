@@ -23,11 +23,17 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
             const booksLists = _.map(data.lists, 'books');
             const allBooks = []
             booksLists.forEach((bookList) => {
-                bookList.forEach((book) => { // TODO: remove duplicates
+                bookList.forEach((book) => { 
                    allBooks.push(book) 
                 })
+
             })
-            setBooks(allBooks)
+            
+            function getUniqueListBy(arr, key) { // filters collection for duplicate objects
+                return [...new Map(arr.map(item => [item[key], item])).values()]
+            }
+           
+            setBooks(getUniqueListBy(allBooks, 'title')) // sets all unique books to local state array
         }
     },[data])
 
