@@ -1,0 +1,9 @@
+.backarrow-container{
+    display: flex;
+    align-items: center;
+    width: 4em;
+}
+
+.backarrow-text{
+    font-size: 1.2rem;
+}

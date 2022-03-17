@@ -7,6 +7,7 @@ import { fetchListBooks } from '../../redux/slices/listBooksSlice';
 import Underline from '../underline/Underline'
 import ListItem from './ListItem';
 import './List.css'
+import BackArrow from '../backArrow/BackArrow';
 
 export default function List(){
     const dispatch = useDispatch();
@@ -23,12 +24,18 @@ export default function List(){
         <>
         <div className='lists-spacer'></div>
         <div className='list-container'>
-            <div className='list-title-container'>
-                <div className='underline-container'>
-                    <p className='underline-extention'><span className='list-indicator'>List: </span>{listName}</p>
-                    <Underline/>
+            <div className='list-header-container'>
+                <div>
+                    <BackArrow />
+                </div>
+                <div className='list-title-container'>
+                    <div className='underline-container'>
+                        <p className='underline-extention'><span className='list-indicator'>List: </span>{listName}</p>
+                        <Underline/>
+                    </div>
                 </div>
             </div>
+            
             <div className='books-container'>
             {loadingState === 'loading' &&
                 <p>loading...</p>

@@ -7,6 +7,10 @@
     height: 12em;
 }
 
+.list-header-container{
+    display: flex;
+}
+
 .list-item-rank{
     position: absolute;
     width: fit-content;
