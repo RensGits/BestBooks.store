@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllBooks } from '../../../redux/slices/allBooksSlice';
 import Book from './Book.js';
@@ -14,28 +14,7 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
     },[])
 
     const loadingStatus = useSelector((state => state.allBooks.loading)) // fetch status from allBooksSlice
-    const data = useSelector((state) => state.allBooks.data.results) // fetched data from allBooksSlice
-
-    const[books,setBooks] = useState(null)
-    
-    useEffect(() => {   // creates single array of all books found in all books lists
-        if(data.lists[0].books[0].book_image !== undefined){
-            const booksLists = _.map(data.lists, 'books');
-            const allBooks = []
-            booksLists.forEach((bookList) => {
-                bookList.forEach((book) => { 
-                   allBooks.push(book) 
-                })
-
-            })
-            
-            function getUniqueListBy(arr, key) { // filters collection for duplicate objects
-                return [...new Map(arr.map(item => [item[key], item])).values()]
-            }
-           
-            setBooks(getUniqueListBy(allBooks, 'title')) // sets all unique books to local state array
-        }
-    },[data])
+    const data = useSelector((state) => state.allBooks.data)
 
     return(
         <div className='booksoverview-container'>
@@ -47,9 +26,9 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
           }
           {loadingStatus === 'completed' &&
             <div className='booksoverview-grid'>
-               {books !== null &&   // maps over all books and returns a Book component for each
-                    books.map((book) => {
-                        return <Book data={book} />
+               {data !== null &&   // maps over all books and returns a Book component for each
+                    data.map((book,index) => {
+                        return <Book data={book} key={index} />
                     })
                }
             </div>

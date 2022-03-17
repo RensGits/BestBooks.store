@@ -7,8 +7,7 @@ export default function NavigationBar(){
 
     const activeStyle = ({ isActive }) => "navigationbar-item" + (isActive ? "-active" : "")
     const route = useLocation();
-    console.log(route)
-  
+    
     return(
         <div className='navigationbar-container'>
             <ul className='navigationbar-items-container'>

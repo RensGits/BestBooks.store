@@ -5,6 +5,7 @@ export const fetchAllLists = createAsyncThunk(
   'books/fetchAllLists',
   async () => {
     const { data } = await axios.get('https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=Am2A6IJRbo3Th1MuXSgBVRT1AWWjr21P')
+    console.log(data)
     return data
   }
 )
@@ -27,6 +28,8 @@ const allListsSlice = createSlice({
     },
     [fetchAllLists.fulfilled](state, {payload}){
         state.loading = 'completed'
+        
+
         state.data = payload
 
     },
