@@ -18,9 +18,6 @@ const allListsSlice = createSlice({
       loading: null,
       data: {
         results: {
-          lists: {
-            
-          }
         }
       }
       
