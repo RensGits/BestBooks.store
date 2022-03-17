@@ -9,7 +9,7 @@
     display: flex;
     justify-content: flex-start;
     list-style: none;
-    flex: 1;
+    flex: 10;
     gap: 4em;
 }
 

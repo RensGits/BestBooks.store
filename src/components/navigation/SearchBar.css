@@ -4,13 +4,12 @@
     justify-content: flex-end;
     align-items: center;
     height: 100%;
-    flex: 1;
+    flex: 8;
 }
 
 .searchbar-input{
-    height: 90%;
+    height: 100%;
     width: 100%;
-    margin-left: 7em;
     padding-left: 3em;
     border-style: none;
     background-color: #F9F9F9;
@@ -21,5 +20,25 @@
 .search-icon{
     position: absolute;
     width: 1em;
-    left: 6em;
+    left: 0.8em;
+}
+
+.search-results-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 2em;
+    min-height: 2em;
+    max-height: 10em;
+    padding-left: 1em;
+    background-color: #F9F9F9;
+    -webkit-box-shadow: 8px 10px 33px -4px rgba(0,0,0,0.27);
+    -moz-box-shadow: 8px 10px 33px -4px rgba(0,0,0,0.27);
+    box-shadow: 8px 10px 33px -4px rgba(0,0,0,0.27);
+}
+
+.no-results-text{
+    font-family: 'Carme';
+    font-size: 0.9rem;
 }

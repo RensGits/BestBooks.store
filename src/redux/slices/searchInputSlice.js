@@ -6,7 +6,6 @@ export const searchInputSlice = createSlice({
     searchInput: '',
   },
   reducers: {
-   
     updateInput: (state, action) => {
       state.searchInput = action.payload
     },

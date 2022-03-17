@@ -1,0 +1,22 @@
+.searchresult-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 3em;
+    padding-left: 1em;
+    cursor: pointer;
+}
+
+.searchresult-bookcover{
+    height: 75%;
+    width: auto;
+    padding-right: 1em;
+}
+
+.searchresult-booktitle, .searchresult-bookauthor, .searchresult-divider{
+    width: fit-content;
+    padding: 0.5em;
+    font-family: 'Carme';
+    font-size: 1rem;
+}
