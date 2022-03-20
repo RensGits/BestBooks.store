@@ -1,8 +1,7 @@
 import './Filters.css'
 import { useSelector } from 'react-redux'
 import _ from 'lodash'
-import { useState } from 'react'
-import CheckBoxFilter from './CheckboxFilters'
+import CheckBoxFilter from '../checkboxFilters/CheckboxFilters'
 
 
 export default function Filter(){ // FILTER COMPONENT FOR BOOKSOVERVIEW COMPONENT

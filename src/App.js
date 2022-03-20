@@ -1,30 +1,26 @@
 import './App.css';
 import LoginRegister from './components/loginRegister/LoginRegister.js';
 import NavigationBar from './components/navigation/NavigationBar.js';
-import AllBooks from './components/Pages/allBooksPage/AllBooks';
-import BrowseLists from './components/Pages/browseListsPage/BrowseLists';
-import List from './components/list/List';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
+import Router from './router/Router';
+import { BrowserRouter } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchAllBooks } from './redux/slices/allBooksSlice';
 
 function App() {
+
+  
+    
+    
 
   return (
     <div className="app">
       <div>
         <LoginRegister />
-        
       </div>
       <BrowserRouter>
       <NavigationBar />
-        <Routes>
-          <Route exact path="/" element={<AllBooks />} /> 
-          <Route path="/browse-lists" element={<BrowseLists />} />
-          <Route path="/browse-lists/:listName" element={<List/>} />
-        </Routes>
+        <Router/>
       </BrowserRouter>   
     </div>
   );

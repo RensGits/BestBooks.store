@@ -1,4 +1,4 @@
-import './BrowseLists.css'
+import './BrowseListsPage.css'
 import { useSelector } from 'react-redux'
 import _ from 'lodash'
 import { useDispatch } from 'react-redux';
@@ -11,14 +11,18 @@ import { Link } from 'react-router-dom';
 
 export default function BrowseLists(){ // BROWSE LISTS COMPONENT FOR BROWSELISTS TAB
 
-   
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(fetchAllLists())
-    },[])
-    
     const loadingState = useSelector((state) => state.allLists.loading)
     const listData = useSelector((state) => state.allLists.data)
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        if(loadingState !== 'completed'){
+            dispatch(fetchAllLists())
+        }
+        
+    },[])
+    
+   
     
     return(
         <div className='browselists-page-container'>

@@ -1,0 +1,7 @@
+.list-header-container{
+    display: flex;
+}
+
+.list-indicator{
+    color: red;
+}

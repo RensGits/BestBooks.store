@@ -1,20 +1,23 @@
+import './BooksOverview.css'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllBooks } from '../../../redux/slices/allBooksSlice';
-import Book from './Book.js';
+import { fetchAllBooks } from '../../../../../redux/slices/allBooksSlice';
+import Book from '../book/Book';
 import _ from 'lodash'
-import './BooksOverview.css'
+
+
 
 export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON ALL BOOKS TAB
+
+    const loadingStatus = useSelector((state => state.allBooks.loading)) // fetch status from allBooksSlice
+    const data = useSelector((state) => state.allBooks.data)
 
     const dispatch = useDispatch();
 
     useEffect(() => {  // fetches data from allBooksSlice
+        if(loadingStatus !== 'completed')
         dispatch(fetchAllBooks())
     },[])
-
-    const loadingStatus = useSelector((state => state.allBooks.loading)) // fetch status from allBooksSlice
-    const data = useSelector((state) => state.allBooks.data)
 
     return(
         <div className='booksoverview-container'>
