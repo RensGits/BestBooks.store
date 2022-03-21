@@ -11,9 +11,9 @@ import SideList from './pageComponents/sideList/SideList.js'
 export default function ListDetails(){
 
     const location = useLocation() // state (props) passed down from Link component
-    const locationProps = location.state
-    const currentSelectedBookTitle = location.state.bookTitle
     const listBooks = useSelector((state) => state.listBooks.data.results.books)
+    const listName = location.state.listName
+    const currentSelectedBookTitle = location.state.bookTitle
     const currentSelectedBookData = _.find(listBooks, function(book){
         const formatedTitle = book.title.toLowerCase().split(',').join('').split(' ').join('-')
         return formatedTitle === currentSelectedBookTitle
@@ -24,12 +24,12 @@ export default function ListDetails(){
             <div className='lists-spacer'></div>
             
             <div className='listdetails-wrapper'>
-                <ListHeader listName={locationProps.listName}  />
+                <ListHeader listName={listName}  />
                 <img className='listdetails-bookdetails-backgroundimage' src={currentSelectedBookData.book_image} alt="" />
                 <div className='listdetails-container'>
                         <img className='listdetails-bookdetails-image' src={currentSelectedBookData.book_image} alt="" />
                         <BookData data={currentSelectedBookData}/>
-                        <SideList currentSelectedBookTitle={currentSelectedBookTitle} />
+                        <SideList currentSelectedBookTitle={currentSelectedBookTitle} listName={listName} />
                 </div>
                 <div className='listdetails-review-container'>
 

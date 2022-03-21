@@ -1,11 +1,10 @@
+import './List.css'
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import _ from 'lodash'
-
 import ListItem from './ListItem';
-import './List.css'
 import { fetchListBooks } from '../../../../redux/slices/listBooksSlice';
 import ListHeader from '../../../list/ListHeader';
 

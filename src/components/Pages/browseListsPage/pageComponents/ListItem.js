@@ -6,7 +6,8 @@ export default function ListItem(props){
     const bookTitle = props.data.title.split(' ').join('-').split(',').join('').toLowerCase();
     const state = {
         listName: props.listName,
-        bookTitle: bookTitle
+        bookTitle: bookTitle,
+        bookData: props.data
     }
 
     return(

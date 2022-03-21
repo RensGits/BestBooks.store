@@ -1,14 +1,17 @@
 import './SideList.css'
 import { useSelector } from 'react-redux'
+import { Link, useLocation } from 'react-router-dom'
+import ListItem from '../../../browseListsPage/pageComponents/ListItem'
 
 export default function SideList(props){
-
-    const listBooks = useSelector((state) => state.listBooks.data.results.books)
-
-    console.log(props.currentSelectedBookTitle)
     
-
-
+    const listBooks = useSelector((state) => state.listBooks.data.results.books)
+    const listName = useSelector((state) => state.listBooks.data.results.listName)
+    const location = useLocation()
+    console.log(location)
+    console.log(listName)
+   
+    
     return(
         <div className='sidelist-container'>
             {listBooks &&
@@ -25,9 +28,9 @@ export default function SideList(props){
                     else 
                         return(
                             <div className='sidelist-item-container'>
-                                <img className='sidelist-item-image' src={book.book_image} alt="" />
-                                <p className='sidelist-item-rank'>{book.rank}</p>
+                                <ListItem data={book} listName={location.state.listName} />
                             </div>
+                           
                     )
                     
                 })
