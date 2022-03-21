@@ -1,0 +1,18 @@
+.listdetails-container{
+    position: relative;
+    min-height: 90vh;
+    background-color: bisque;
+}
+
+.listdetails-booksdetails-container{
+    display: flex;
+}
+
+.listdetails-bookdetails-image{
+    width: 10em;
+    height: auto;
+}
+
+.listdetails-bookdetails-data{
+
+}

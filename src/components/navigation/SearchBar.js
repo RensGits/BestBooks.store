@@ -25,10 +25,7 @@ export default function SearchBar(){
                 filteredBooks.push(value2)
            }
        })
-       setData(filteredBooks)
-       console.log(filteredBooks)
-        
-        
+       setData(filteredBooks)   
     },[currentSearchInput, allBooks])
 
     

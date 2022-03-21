@@ -1,8 +1,10 @@
 import { Route, Routes } from "react-router-dom"
 import AllBooksPage from "../components/Pages/allBooksPage/AllBooksPage.js"
 import BrowseListsPage from "../components/Pages/browseListsPage/BrowseListsPage.js"
-import ListDetails from "../components/Pages/listDetailsPage/ListDetails.js"
-import List from "../components/list/List.js"
+import List from "../components/Pages/browseListsPage/pageComponents/List.js"
+import ListDetails from "../components/Pages/detailsPage/ListDetails.js"
+
+
 
 
 export default function Router(){

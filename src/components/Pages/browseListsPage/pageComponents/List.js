@@ -3,10 +3,11 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import _ from 'lodash'
-import { fetchListBooks } from '../../redux/slices/listBooksSlice';
-import ListHeader from './ListHeader';
+
 import ListItem from './ListItem';
 import './List.css'
+import { fetchListBooks } from '../../../../redux/slices/listBooksSlice';
+import ListHeader from '../../../list/ListHeader';
 
 
 export default function List(){
@@ -38,7 +39,6 @@ export default function List(){
                 <div className='books-grid-container'>
                     {
                         _.map(booksData.results.books).map((itemData)=>{
-                            console.log(itemData)
                             return(
                                 <ListItem data={itemData} listName={listName} />
                             )
