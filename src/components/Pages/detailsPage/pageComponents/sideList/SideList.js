@@ -1,7 +1,7 @@
 import './SideList.css'
 import { useSelector } from 'react-redux'
-import { Link, useLocation } from 'react-router-dom'
-import ListItem from '../../../browseListsPage/pageComponents/ListItem'
+import {  useLocation } from 'react-router-dom'
+import ListItem from '../../../../listItem/ListItem.js'
 
 export default function SideList(props){
     
@@ -20,19 +20,16 @@ export default function SideList(props){
                     if(formatedTitle === props.currentSelectedBookTitle){
                         return(
                             <div className='sidelist-item-container-selected'>
-                                <img className='sidelist-item-image-selected' src={book.book_image} alt="" />
-                                <p className='sidelist-item-rank-selected'>{book.rank}</p>
+                               <ListItem data={book} listName={location.state.listName} selected={true} />
                             </div>
                         )
                     }
                     else 
                         return(
-                            <div className='sidelist-item-container'>
-                                <ListItem data={book} listName={location.state.listName} />
-                            </div>
-                           
-                    )
-                    
+                            <div className='sidelist-item-container' >
+                                <ListItem data={book} listName={location.state.listName} selected={false} />
+                            </div>   
+                        )
                 })
             }
         </div>

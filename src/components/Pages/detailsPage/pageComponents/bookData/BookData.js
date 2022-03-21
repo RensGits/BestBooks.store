@@ -15,7 +15,9 @@ export default function BookData(props){
             <div className="basicinfo-container">
                 <p>Author: {props.data.author}</p>
                 <p>Publisher: {props.data.publisher}</p>
-                <p>ISBN: {props.data.isbns[0].isbn13}</p>
+                {props.data.isbns[0] && 
+                    <p>ISBN: {props.data.isbns[0].isbn13}</p>
+                }  
             </div>
             <div >
                 <p className='soldat-header'>Sold at:</p>

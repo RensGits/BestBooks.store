@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom'
 import _ from 'lodash'
-import ListItem from './ListItem';
+import ListItem from '../../../listItem/ListItem';
 import { fetchListBooks } from '../../../../redux/slices/listBooksSlice';
 import ListHeader from '../../../list/ListHeader';
 

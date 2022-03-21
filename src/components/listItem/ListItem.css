@@ -1,27 +1,26 @@
 .list-item-container{
-    display: flex;
     position: relative;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 9em;
-    height: 12em;
+    width: 10em;
+    height: 10em
     
 }
 
-
 .list-item-rank{
     position: absolute;
-    width: fit-content;
-    top: 0;
-    right: 0;
+    right: 0.6em;
+    top: 0.5em;
+    text-align: right;
     font-family: 'Carme';
-    font-size: 0.9rem;
-    color: #848484
+    color: #A7A5A5
+
 }
 
 .list-item-image{
-    width: 6em;
-    height: auto;
+    height: 65%;
+    width: auto;
     -webkit-box-shadow: 8px 10px 33px -4px rgba(0,0,0,0.47);
     -moz-box-shadow: 8px 10px 33px -4px rgba(0,0,0,0.47);
     box-shadow: 8px 10px 33px -4px rgba(0,0,0,0.47);
