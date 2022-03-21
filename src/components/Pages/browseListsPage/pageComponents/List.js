@@ -24,7 +24,7 @@ export default function List(){
         <>
         <div className='lists-spacer'></div>
         <div className='list-container'>
-            <Header type='List' name={listName} />
+            <Header type='List' name={listName} backArrowTo={'/browse-lists'} />
             
             <div className='books-container'>
             {loadingState === 'loading' &&

@@ -2,8 +2,6 @@
 import './ListDetails.css'
 import { useLocation } from 'react-router-dom'
 import Header from '../../header/Header'
-import { useSelector } from 'react-redux'
-import _ from 'lodash'
 import BookData from './pageComponents/bookData/BookData'
 import SideList from './pageComponents/sideList/SideList.js'
 
@@ -28,10 +26,10 @@ export default function ListDetails(){
             
             <div className='listdetails-wrapper'>
                 {isList &&
-                    <Header type={'List'} name={listName}  />
+                    <Header type={'List'} name={listName} backArrowTo={`/browse-lists/${listName}`}  />
                 }
                 {!isList &&
-                    <Header type={'Book'} name={currentSelectedBookTitle} />
+                    <Header type={'Book'} name={currentSelectedBookTitle} backArrowTo='/' />
                 }
                 
                 

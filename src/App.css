@@ -28,3 +28,7 @@ h1{
   font-weight: 600;
 }
 
+a:Link{
+  text-decoration: none
+}
+

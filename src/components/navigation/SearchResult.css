@@ -8,6 +8,8 @@
     cursor: pointer;
 }
 
+
+
 .searchresult-bookcover{
     height: 75%;
     width: auto;
@@ -19,4 +21,6 @@
     padding: 0.5em;
     font-family: 'Carme';
     font-size: 1rem;
+    color: black;
+    text-decoration-line: none;
 }

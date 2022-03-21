@@ -7,7 +7,7 @@ export default function Header(props){
     return(
         <div className='list-header-container'>
                     <div>
-                        <BackArrow />
+                        <BackArrow to={props.backArrowTo}/>
                     </div>
                     <div className='list-title-container'>
                         <div className='underline-container'>
