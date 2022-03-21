@@ -12,6 +12,7 @@ export default function Router(){
             <Route path="/browse-lists" element={<BrowseListsPage />} />
             <Route path="/browse-lists/:listName" element={<List/>} />
             <Route path="/browse-lists/:listName/details/:selectedBook" element={<ListDetails/>} />
+            <Route path="/book-details/:bookName/" element={<ListDetails/>} />
       </Routes>
     )
 }

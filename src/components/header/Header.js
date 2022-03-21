@@ -1,8 +1,8 @@
-import './ListHeader.css'
+import './Header.css'
 import BackArrow from "../backArrow/BackArrow"
 import Underline from "../underline/Underline"
 
-export default function ListHeader(props){
+export default function Header(props){
     
     return(
         <div className='list-header-container'>
@@ -11,7 +11,7 @@ export default function ListHeader(props){
                     </div>
                     <div className='list-title-container'>
                         <div className='underline-container'>
-                            <p className='underline-extention'><span className='list-indicator'>List: </span>{props.listName}</p>
+                            <p className='underline-extention'><span className='list-indicator'>{props.type + ':'} </span>{props.name}</p>
                             <Underline/>
                         </div>
                     </div>

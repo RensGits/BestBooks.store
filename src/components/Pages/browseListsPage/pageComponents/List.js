@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 import _ from 'lodash'
 import ListItem from '../../../listItem/ListItem';
 import { fetchListBooks } from '../../../../redux/slices/listBooksSlice';
-import ListHeader from '../../../list/ListHeader';
+import Header from '../../../header/Header';
 
 
 export default function List(){
@@ -24,7 +24,7 @@ export default function List(){
         <>
         <div className='lists-spacer'></div>
         <div className='list-container'>
-            <ListHeader listName={listName} />
+            <Header type='List' name={listName} />
             
             <div className='books-container'>
             {loadingState === 'loading' &&

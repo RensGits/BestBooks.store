@@ -6,12 +6,8 @@ import ListItem from '../../../../listItem/ListItem.js'
 export default function SideList(props){
     
     const listBooks = useSelector((state) => state.listBooks.data.results.books)
-    const listName = useSelector((state) => state.listBooks.data.results.listName)
     const location = useLocation()
-    console.log(location)
-    console.log(listName)
-   
-    
+
     return(
         <div className='sidelist-container'>
             {listBooks &&
