@@ -19,7 +19,7 @@ export default function NavigationBar(){
                 </div>
                 <div className='underline-container'>
                     <NavLink to="/browse-lists" className={activeStyle}>Browse lists</NavLink>
-                    {route.pathname ==='/browse-lists' &&
+                    {route.pathname.includes('/browse-lists') &&
                         <Underline cName="underline" />
                     }
                 </div>
