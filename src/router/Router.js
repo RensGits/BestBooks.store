@@ -4,13 +4,8 @@ import BrowseListsPage from "../components/Pages/browseListsPage/BrowseListsPage
 import List from "../components/Pages/browseListsPage/pageComponents/List.js"
 import ListDetails from "../components/Pages/detailsPage/ListDetails.js"
 
-
-
-
 export default function Router(){
     
-    
-
     return(
         <Routes>
             <Route exact path="/" element={<AllBooksPage />} /> 

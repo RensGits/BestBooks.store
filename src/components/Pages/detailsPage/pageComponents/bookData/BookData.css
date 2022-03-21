@@ -1,4 +1,29 @@
-.basicinfo-container{
+.bookdata-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0 10em 3em 4em;
+    row-gap: 1.4em;
+}
+
+.basicinfo-container p{
     font-family: 'Carme';
-    font-size: 10em;
+    font-size: 0.95rem;
+    padding: 0.4em 0;
+}
+
+.soldat-header{
+    font-size: 1rem;
+    color: #E11F1F;
+    height: 2em;
+}
+
+.soldat-item{
+    padding-right: 3em;
+    height: fit-content;
+    color: black;
+    font-size: 1rem;
+}
+
+.soldat-item:hover{
+    color: #E11F1F
 }

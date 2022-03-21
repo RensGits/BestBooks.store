@@ -1,5 +1,6 @@
 .app{
   padding: 3em 5em;
+  overflow-x: hidden;
 }
 
 .lists-spacer{
@@ -19,5 +20,11 @@
 .loading-indicator{
   position: absolute;
   top: 10em;
+}
+
+h1{
+  font-family: 'Caladea';
+  font-size: 2rem;
+  font-weight: 600;
 }
 
