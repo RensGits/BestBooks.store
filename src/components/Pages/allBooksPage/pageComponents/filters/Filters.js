@@ -13,8 +13,8 @@ export default function Filter(){ // FILTER COMPONENT FOR BOOKSOVERVIEW COMPONEN
   
     return(
         <div className='filters-container'>
-            <CheckBoxFilter header="Authors" data={allAuthors} />
-            <CheckBoxFilter header="Publishers" data={allPublishers} />
+            <CheckBoxFilter header="Authors" filterType='author' data={allAuthors} />
+            <CheckBoxFilter header="Publishers" filterType='publisher' data={allPublishers} />
             <p className='filter-header'>Publish date</p>
             <div>
                 {allBooks &&

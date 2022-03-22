@@ -1,6 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import {
-    persistStore,
     persistReducer,
     FLUSH,
     REHYDRATE,
@@ -15,6 +14,7 @@ import allBooksReducer from './slices/allBooksSlice';
 import allListsReducer from './slices/allListsSlice';
 import listBooksReducer from './slices/listBooksSlice';
 import currentSelectedBookReducer from './slices/currentSelectedBookSlice';
+import filterOverviewReducer from './slices/filterOverviewSlice';
 
 const persistConfig = {
   key: 'root',
@@ -27,6 +27,7 @@ const reducers = combineReducers({
     allBooks: allBooksReducer,
     allLists: allListsReducer,
     listBooks: listBooksReducer,
+    overviewFilters: filterOverviewReducer,
     currentBook: currentSelectedBookReducer
 })
 

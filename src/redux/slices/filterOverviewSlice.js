@@ -1,17 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+
 export const filterOverviewSlice = createSlice({
   name: 'overviewFilters',
-  initialState: {
-    filters: {}
+  initialState:{
+    authors: [],
+    publishers: []
   },
   reducers: {
     updateOverviewFilters: (state, action) => {
-      state.overviewFilters = action.payload
+      if(action.payload.type === 'author'){
+        state.authors = action.payload.filters
+      }
+      if(action.payload.type === 'publisher'){
+        state.publishers = action.payload.filters
+      }
+      
     },
   },
 })
 
-export const { updateInput } = filterOverviewSlice.actions
+export const { updateOverviewFilters } = filterOverviewSlice.actions
 
 export default filterOverviewSlice.reducer

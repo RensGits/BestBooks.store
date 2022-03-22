@@ -15,3 +15,8 @@
     color: black;
 }
 
+.list-item:hover{
+    color: #E11F1F !important;
+    transform: translateY(0.05em);
+}
+
