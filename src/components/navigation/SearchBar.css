@@ -36,6 +36,7 @@
     -webkit-box-shadow: 8px 10px 33px -4px rgba(0,0,0,0.27);
     -moz-box-shadow: 8px 10px 33px -4px rgba(0,0,0,0.27);
     box-shadow: 8px 10px 33px -4px rgba(0,0,0,0.27);
+    overflow-x: scroll;
 }
 
 .no-results-text{
