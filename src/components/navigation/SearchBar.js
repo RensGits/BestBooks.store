@@ -14,6 +14,7 @@ export default function SearchBar(){
 
     const allBooks = useSelector((state) => state.allBooks.data);
     const [data,setData] = useState([]);
+    const [blur,setBlur] = useState(false)
 
     const currentSearchInput = useSelector((state) => state.searchInput)
     useEffect(() => {
@@ -39,32 +40,32 @@ export default function SearchBar(){
        setData(_.uniq(filteredBooks)) // sets temporary array to local state & filters duplicates
     },[currentSearchInput, allBooks])
 
-    
-    
-  
-       
-   
-  
-
     return(
         
         <div className='searchbar-container'>
-            <input className='searchbar-input' placeholder={placeholderString} onChange={(e)=> dispatch(updateInput(e.target.value))}/>
+            <input 
+                className='searchbar-input' 
+                placeholder={placeholderString} 
+                onChange={(e)=> dispatch(updateInput(e.target.value))}
+                onBlur={() => setBlur(true)}
+                onFocus={() => setBlur(false)}/>
+                
             <BiSearch className='search-icon' color='light-gray' />
-            {data.length !== allBooks.length &&
-                <div className='search-results-container'>
-                    {data.length === 0 &&   // returns no results found if filteredBooks state object is empty
+            {(data.length !== allBooks.length) &&
+                <div className='search-results-wrapper'  >
+                    
+                    <div className='search-results-container' onMouseDown={(e) => e.preventDefault()}>
+                    {(data.length === 0 && !blur) &&   // returns no results found if filteredBooks state object is empty
                         <p className='no-results-text'>No results found</p>
                     }
-                    {data.length !== allBooks.length && // returns searchresult for each object in filteredBooks state object
+                    {(data.length !== allBooks.length && !blur) && // returns searchresult for each object in filteredBooks state object
                         data.map((book)=>{
                             return <SearchResult data={book}  />
                         })
                     }
                 </div>
+                </div>
             }
-        </div>
-       
-        
+        </div>  
     )
 }

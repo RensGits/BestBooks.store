@@ -10,17 +10,17 @@ export default function SearchResult(props){
         bookTitle: formattedTitle
     }
 
+    const capitalizedTitle = props.data.title.toLowerCase().split(' ').map(word => {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    }).join(' ')
 
     return(
-        
-        
             <Link to={`book-details/${formattedTitle}`} state={state} className='searchresult-container'>
                 <img className='searchresult-bookcover' src={props.data.book_image} alt="" />
-                <p className='searchresult-booktitle' style={{textDecoration:'none'}}>{props.data.title}</p>
-                <p className='searchresult-divider'>-</p>
-                <p className='searchresult-bookauthor'>{props.data.author}</p>
+                <div className='searchresult-info-container'>
+                    <p className='searchresult-booktitle' style={{textDecoration:'none'}}>{capitalizedTitle}</p>
+                    <p className='searchresult-bookauthor'>{'by ' + props.data.author}</p>
+                </div>
             </Link>
-       
-        
     )
 }
