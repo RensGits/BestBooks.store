@@ -4,14 +4,7 @@ import NavigationBar from './components/navigation/NavigationBar.js';
 import Router from './router/Router';
 import { BrowserRouter } from "react-router-dom";
 
-
-
 function App() {
-
-
-  
-    
-    
 
   return (
     <div className="app">

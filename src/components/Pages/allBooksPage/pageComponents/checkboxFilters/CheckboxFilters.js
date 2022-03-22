@@ -17,14 +17,14 @@ export default function CheckBoxFilter(props){
     const dispatch = useDispatch();
     useEffect(() => {
         console.log('useEffect triggered')
-        if(checkedFilters.length > 0){
-            dispatch(updateOverviewFilters(
-                { 
-                    type: props.filterType,
-                    filters: checkedFilters
-                }
+        
+        dispatch(updateOverviewFilters(
+            { 
+                type: props.filterType,
+                filters: checkedFilters
+            }
             ))
-        }
+        
     },[checkedFilters])
 
     return(
