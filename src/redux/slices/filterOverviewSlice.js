@@ -3,17 +3,29 @@ import { createSlice } from '@reduxjs/toolkit'
 
 export const filterOverviewSlice = createSlice({
   name: 'overviewFilters',
-  initialState:{
-    authors: [],
-    publishers: []
+  initialState: {
+    author: [],
+    publisher: []
   },
   reducers: {
     updateOverviewFilters: (state, action) => {
+      if(action.payload === 'clear author'){
+        state.author = []
+      }
+      if(action.payload === 'clear publisher'){
+        state.publisher = []
+      }
+      if(action.payload === 'clear weekRange'){
+        state.weekRange = []
+      }
+      if(action.payload.type === 'weekRange'){
+        state.weekRange = action.payload.filters
+      }
       if(action.payload.type === 'author'){
-        state.authors = action.payload.filters
+        state.author = action.payload.filters
       }
       if(action.payload.type === 'publisher'){
-        state.publishers = action.payload.filters
+        state.publisher = action.payload.filters
       }
       
     },

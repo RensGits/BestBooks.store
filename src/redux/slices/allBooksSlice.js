@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 import _ from 'lodash'
-import allListsSlice from './allListsSlice'
 
 export const fetchAllBooks = createAsyncThunk(
   'books/fetchAllBooks',

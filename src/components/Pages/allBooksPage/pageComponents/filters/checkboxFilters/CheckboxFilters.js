@@ -1,29 +1,32 @@
 import { useEffect, useState } from 'react'
 import './CheckboxFilters.css'
-import { updateOverviewFilters } from '../../../../../redux/slices/filterOverviewSlice'
 import { useDispatch } from 'react-redux'
+import { updateOverviewFilters } from '../../../../../../redux/slices/filterOverviewSlice'
 
 export default function CheckBoxFilter(props){
 
     const [checkedFilters,setCheckedFilter] = useState([])
     const handleChange = (e) => {
-        if(!checkedFilters.includes(e.target.value)){
-            setCheckedFilter([...checkedFilters, e.target.value])
+        if(!checkedFilters.includes(e.target.value)){ // if checked filter is not included in checkFilters state array
+            setCheckedFilter([...checkedFilters, e.target.value]) // add filter to state array
         }
-        else {
+        else {  // else remove from checkedFilter state array
             setCheckedFilter(checkedFilters.filter(item => item !== e.target.value))
         }
     }
+
+    
     const dispatch = useDispatch();
     useEffect(() => {
-        console.log('useEffect triggered')
-        
-        dispatch(updateOverviewFilters(
-            { 
-                type: props.filterType,
-                filters: checkedFilters
-            }
+       
+          // dispatches filter with filtertype to filterOverview slice
+            dispatch(updateOverviewFilters(
+                { 
+                    type: props.filterType,
+                    filters: checkedFilters
+                }
             ))
+        
         
     },[checkedFilters])
 

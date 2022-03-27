@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllBooks } from '../../../../../redux/slices/allBooksSlice';
 import Book from '../book/Book';
-import _ from 'lodash'
+import _, { filter } from 'lodash'
+
 
 
 
@@ -16,25 +17,49 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
     const dispatch = useDispatch();
 
     useEffect(() => {  // fetches data from allBooksSlice
-        if(loadingStatus !== 'completed')
         dispatch(fetchAllBooks())
     },[])
 
-    useEffect(() => {
+    
 
-      const tempArray = []
-      if(filters.authors.length > 0 || filters.publishers.length > 0){
-        _.forEach(data, function(value,key){
-          if(filters.authors.includes(value.author)){
-            tempArray.push(value)
-          }
-          if(filters.publishers.includes(value.publisher)){
-            tempArray.push(value)
-          }
-        })
+    useEffect(() => {
+      
+      if(filters.authors || filters.publisher){
+        if(filters.publisher.length === 0 && filters.author.length > 0){ // if there are currently no publisher filters selected
+          setFilteredData(_.filter(data, (item) => { // filter original data for selected authors
+            return filters.author.includes(item.author)
+          }))
+        }
+        if(filters.author.length === 0 && filters.publisher.length > 0){  // if there are currebtly no author filters selected
+          setFilteredData(_.filter(data, (item) => { // filter original data for selected publishers
+            return filters.publisher.includes(item.publisher)
+          }))
+        }
+        if(filters.author.length > 0 && filters.publisher.length > 0){ // if both author & publisher filters are selected
+          setFilteredData(_.filter(data, (item) => {  // filter original data for selected authors and publishers
+            return filters.publisher.includes(item.publisher) && filters.author.includes(item.author)
+          } ))
+        }
       }
-      setFilteredData(tempArray)
+
     },[filters])
+
+    
+
+   
+    
+    function DataLoader(){
+      if((filters.author.length > 0) || (filters.publisher.length > 0)){
+        return filteredData.map((book,index) => {
+          return <Book data={book} key={index} />
+      })
+      }
+      else{
+        return data.map((book,index) => {
+          return <Book data={book} key={index} />
+      })
+      }
+    }
 
     return(
         <div className='booksoverview-container'>
@@ -46,16 +71,11 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
           }
           {loadingStatus === 'completed' &&
             <div className='booksoverview-grid'>
-               {(data !== null && filteredData.length === 0) &&   // maps over all books and returns a Book component for each
-                    data.map((book,index) => {
-                        return <Book data={book} key={index} />
-                    })
-               }
-               {filteredData.length > 0 &&   // maps over all filtered books and returns a Book component for each
-                    filteredData.map((book,index) => {
-                        return <Book data={book} key={index} />
-                    })
-               }
+              {filters && 
+                 <DataLoader/>
+              }
+              
+               
             </div>
           }
         </div>

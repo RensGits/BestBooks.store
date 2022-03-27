@@ -18,8 +18,7 @@ export default function BrowseLists(){ // BROWSE LISTS COMPONENT FOR BROWSELISTS
     useEffect(() => {
         if(loadingState !== 'completed'){
             dispatch(fetchAllLists())
-        }
-        
+        }  
     },[])
     
    

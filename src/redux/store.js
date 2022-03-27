@@ -13,14 +13,10 @@ import searchInputReducer from './slices/searchInputSlice';
 import allBooksReducer from './slices/allBooksSlice';
 import allListsReducer from './slices/allListsSlice';
 import listBooksReducer from './slices/listBooksSlice';
-import currentSelectedBookReducer from './slices/currentSelectedBookSlice';
 import filterOverviewReducer from './slices/filterOverviewSlice';
+import weekFilterReducer from './slices/filterWeekRangeSlice';
 
-const persistConfig = {
-  key: 'root',
-  version: 1,
-  storage,
-}
+
 
 const reducers = combineReducers({
     searchInput: searchInputReducer,
@@ -28,8 +24,15 @@ const reducers = combineReducers({
     allLists: allListsReducer,
     listBooks: listBooksReducer,
     overviewFilters: filterOverviewReducer,
-    currentBook: currentSelectedBookReducer
+    weekFilter: weekFilterReducer
 })
+
+const persistConfig = {
+  key: 'root',
+  version: 1,
+  storage: storage,
+  blacklist: ['searchInput','overviewFilters','weekFilters']
+}
 
 const persistedReducer = persistReducer(persistConfig,reducers);
 

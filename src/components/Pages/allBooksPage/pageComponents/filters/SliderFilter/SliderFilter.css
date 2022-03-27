@@ -1,0 +1,62 @@
+.sliderfilter-container{
+    position: relative;
+    padding: 1em 0;
+    width: 80%;
+}
+
+.sliderfilter-values-container{
+    display: flex;
+    position: absolute;
+    top: 1.7em;
+    justify-content: space-between;
+}
+
+.sliderfilter-value{
+    width: fit-content;
+    font-family: 'Carme';
+    font-size: 0.6rem;
+}
+
+.sliderfilter-container > input[type='range']{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+input[type='range']::-webkit-slider-thumb{
+    appearance: none;
+    width: 0.7em;
+    height: 0.7em;
+    background-color: #EE7272;
+    border-radius: 1em;
+    pointer-events: auto;
+    margin-top: -0.25em;
+    pointer-events: auto;
+  }
+
+.input-slider-track{
+    position: absolute;
+    top: 1em;
+    width: 100%;
+    height: 0.1em;
+    background-color: #E7E2E0;
+    border-radius: 0.1em;
+}
+
+.input-slider-input{
+    position: absolute;
+    top: 1em;
+    z-index: 2;
+}
+
+
+.input-slider-range{
+    position: absolute;
+    height: 0.2em;
+    background-color: #c4bfbd ;
+    border-radius: 0.3em;
+    width: auto;
+    top:1em;
+}
