@@ -5,7 +5,7 @@ export const filterOverviewSlice = createSlice({
   name: 'overviewFilters',
   initialState: {
     author: [],
-    publisher: []
+    publisher: [],
   },
   reducers: {
     updateOverviewFilters: (state, action) => {

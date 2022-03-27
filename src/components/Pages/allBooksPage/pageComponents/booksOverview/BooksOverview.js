@@ -17,25 +17,43 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
         dispatch(fetchAllBooks())
     },[])
 
-    useEffect(() => {
+    // useEffect(() => {
       
-      if(filters.authors || filters.publisher){
-        if(filters.publisher.length === 0 && filters.author.length > 0){ // if there are currently no publisher filters selected
-          setFilteredData(_.filter(data, (item) => { // filter original data for selected authors
-            return filters.author.includes(item.author)
-          }))
-        }
-        if(filters.author.length === 0 && filters.publisher.length > 0){  // if there are currebtly no author filters selected
-          setFilteredData(_.filter(data, (item) => { // filter original data for selected publishers
-            return filters.publisher.includes(item.publisher)
-          }))
-        }
-        if(filters.author.length > 0 && filters.publisher.length > 0){ // if both author & publisher filters are selected
-          setFilteredData(_.filter(data, (item) => {  // filter original data for selected authors and publishers
-            return filters.publisher.includes(item.publisher) && filters.author.includes(item.author)
-          }))
-        }
+    //   if(filters.authors || filters.publisher){
+    //     if(filters.publisher.length === 0 && filters.author.length > 0){ // if there are currently no publisher filters selected
+    //       setFilteredData(_.filter(data, (item) => { // filter original data for selected authors
+    //         return filters.author.includes(item.author)
+    //       }))
+    //     }
+    //     if(filters.author.length === 0 && filters.publisher.length > 0){  // if there are currebtly no author filters selected
+    //       setFilteredData(_.filter(data, (item) => { // filter original data for selected publishers
+    //         return filters.publisher.includes(item.publisher)
+    //       }))
+    //     }
+    //     if(filters.author.length > 0 && filters.publisher.length > 0){ // if both author & publisher filters are selected
+    //       setFilteredData(_.filter(data, (item) => {  // filter original data for selected authors and publishers
+    //         return filters.publisher.includes(item.publisher) && filters.author.includes(item.author)
+    //       }))
+    //     }
+    //   }
+    // },[filters])
+
+    function checkboxFilter(category){
+      if(filters[category].length > 0){
+        return _.filter(data, function(book){
+          if(filters[category].length > 0){
+            return filters[category].includes(book[category])
+          }
+      })
       }
+      else return data
+    }
+
+    useEffect(() => {
+      const filteredByAuthor = checkboxFilter('author')
+      const filteredByPublisher = checkboxFilter('publisher')
+      const allFiltersApplied = _.intersectionWith(filteredByAuthor, filteredByPublisher, _.isEqual);
+      setFilteredData(allFiltersApplied)
     },[filters])
 
     function DisplayedData(){ // returns original fetched data if no filters are applied, else returns filtered data
