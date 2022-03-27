@@ -36,16 +36,15 @@ export default function SliderFilter(props){
     }
 
     const handleFilter = () => {
-        console.log(currentMinValue, sliderMinRange, currentMaxValue, sliderMaxRange)
-        if((currentMinValue == sliderMinRange) && (currentMaxValue == sliderMaxRange)){
+        if((currentMinValue === sliderMinRange) && (currentMaxValue === sliderMaxRange)){
             dispatch(updateOverviewFilters('clear weekRange'))
         }
         else {
             dispatch(updateOverviewFilters({
                 type: 'weekRange',
                 filters: {
-                    min: currentMinValue,
-                    max: currentMaxValue
+                    min: parseInt(currentMinValue),
+                    max: parseInt(currentMaxValue)
             }}))
         }
     }

@@ -3,10 +3,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllBooks } from '../../../../../redux/slices/allBooksSlice';
 import Book from '../book/Book';
-import _, { filter } from 'lodash'
-
-
-
+import _ from 'lodash'
 
 export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON ALL BOOKS TAB
 
@@ -19,8 +16,6 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
     useEffect(() => {  // fetches data from allBooksSlice
         dispatch(fetchAllBooks())
     },[])
-
-    
 
     useEffect(() => {
       
@@ -38,17 +33,12 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
         if(filters.author.length > 0 && filters.publisher.length > 0){ // if both author & publisher filters are selected
           setFilteredData(_.filter(data, (item) => {  // filter original data for selected authors and publishers
             return filters.publisher.includes(item.publisher) && filters.author.includes(item.author)
-          } ))
+          }))
         }
       }
-
     },[filters])
 
-    
-
-   
-    
-    function DataLoader(){
+    function DisplayedData(){ // returns original fetched data if no filters are applied, else returns filtered data
       if((filters.author.length > 0) || (filters.publisher.length > 0)){
         return filteredData.map((book,index) => {
           return <Book data={book} key={index} />
@@ -63,19 +53,17 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
 
     return(
         <div className='booksoverview-container'>
-          {loadingStatus === 'loading' &&   // loading indicator
+          {loadingStatus === 'loading' &&   
             <p>loading...</p>
           }
-          {loadingStatus === 'rejected' &&  // error indicator
+          {loadingStatus === 'rejected' &&  
              <p>Something went wrong. Please refresh this page and see if the error resolves. If not please contact our service-desk.</p>
           }
           {loadingStatus === 'completed' &&
             <div className='booksoverview-grid'>
               {filters && 
-                 <DataLoader/>
+                 <DisplayedData/>
               }
-              
-               
             </div>
           }
         </div>

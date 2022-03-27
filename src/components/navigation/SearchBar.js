@@ -14,7 +14,7 @@ export default function SearchBar(){
 
     const allBooks = useSelector((state) => state.allBooks.data);
     const [data,setData] = useState([]);
-    const [blur,setBlur] = useState(false)
+    const [blur,setBlur] = useState(true)
 
     const currentSearchInput = useSelector((state) => state.searchInput)
     useEffect(() => {
