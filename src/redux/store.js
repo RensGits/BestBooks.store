@@ -14,7 +14,7 @@ import allBooksReducer from './slices/allBooksSlice';
 import allListsReducer from './slices/allListsSlice';
 import listBooksReducer from './slices/listBooksSlice';
 import filterOverviewReducer from './slices/filterOverviewSlice';
-import weekFilterReducer from './slices/filterWeekRangeSlice';
+
 
 
 
@@ -24,7 +24,6 @@ const reducers = combineReducers({
     allLists: allListsReducer,
     listBooks: listBooksReducer,
     overviewFilters: filterOverviewReducer,
-    weekFilter: weekFilterReducer
 })
 
 const persistConfig = {

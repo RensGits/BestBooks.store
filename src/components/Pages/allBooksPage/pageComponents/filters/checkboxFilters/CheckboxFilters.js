@@ -26,8 +26,6 @@ export default function CheckBoxFilter(props){
                     filters: checkedFilters
                 }
             ))
-        
-        
     },[checkedFilters])
 
     return(

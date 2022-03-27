@@ -17,34 +17,20 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
         dispatch(fetchAllBooks())
     },[])
 
-    // useEffect(() => {
-      
-    //   if(filters.authors || filters.publisher){
-    //     if(filters.publisher.length === 0 && filters.author.length > 0){ // if there are currently no publisher filters selected
-    //       setFilteredData(_.filter(data, (item) => { // filter original data for selected authors
-    //         return filters.author.includes(item.author)
-    //       }))
-    //     }
-    //     if(filters.author.length === 0 && filters.publisher.length > 0){  // if there are currebtly no author filters selected
-    //       setFilteredData(_.filter(data, (item) => { // filter original data for selected publishers
-    //         return filters.publisher.includes(item.publisher)
-    //       }))
-    //     }
-    //     if(filters.author.length > 0 && filters.publisher.length > 0){ // if both author & publisher filters are selected
-    //       setFilteredData(_.filter(data, (item) => {  // filter original data for selected authors and publishers
-    //         return filters.publisher.includes(item.publisher) && filters.author.includes(item.author)
-    //       }))
-    //     }
-    //   }
-    // },[filters])
-
-    function checkboxFilter(category){
+    function checkboxFilter(category){  // filters book by filter category of type checkbox
       if(filters[category].length > 0){
         return _.filter(data, function(book){
-          if(filters[category].length > 0){
             return filters[category].includes(book[category])
-          }
-      })
+        })
+      }
+      else return data
+    }
+
+    function rangeFilter(category){  // filters book by filter categroy of type range
+      if(filters[category].min !== undefined){
+        return _.filter(data, function(book){
+          return book[category] >= filters[category].min && book[category] <= filters[category].max 
+        })
       }
       else return data
     }
@@ -52,7 +38,8 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
     useEffect(() => {
       const filteredByAuthor = checkboxFilter('author')
       const filteredByPublisher = checkboxFilter('publisher')
-      const allFiltersApplied = _.intersectionWith(filteredByAuthor, filteredByPublisher, _.isEqual);
+      const filteredByWeekRange = rangeFilter('weeks_on_list')
+      const allFiltersApplied = _.intersectionWith(filteredByAuthor, filteredByPublisher, filteredByWeekRange, _.isEqual); // returns books that are found in all filters
       setFilteredData(allFiltersApplied)
     },[filters])
 
