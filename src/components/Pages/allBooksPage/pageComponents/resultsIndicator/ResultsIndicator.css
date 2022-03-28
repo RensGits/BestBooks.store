@@ -1,0 +1,15 @@
+.resultsindicator-container{
+    display: flex;
+    position: absolute;
+    justify-content: space-evenly;
+    width: 6em;
+    padding: 0.3em;
+    bottom: -9.4em;
+    right: 5em;
+}
+
+.resultsindicator-container > p {
+    font-family: 'Carme';
+    font-size: 0.8rem;
+    width: fit-content;
+}

@@ -5,6 +5,7 @@ import { fetchAllBooks } from '../../../../../redux/slices/allBooksSlice';
 import { Oval } from 'react-loader-spinner';
 import Book from '../book/Book';
 import _ from 'lodash'
+import ResultsIndicator from '../resultsIndicator/ResultsIndicator.js';
 
 
 export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON ALL BOOKS TAB
@@ -94,7 +95,10 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
           {loadingStatus === 'completed' &&
             <div className='booksoverview-grid'>
               {filters && 
+                <>
                  <DisplayedData/>
+                 <ResultsIndicator numberOfResults = {filteredData.length}/>
+                </>
               }
             </div>
           }
