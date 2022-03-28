@@ -3,13 +3,13 @@ import { useAuth } from '../../../../contexts/AuthContext';
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 
-export default function LoginModal(){
+export default function ResetPasswordModal(){
 
     const [error, setError] = useState('')
     const [trying, setTrying] = useState(false)
+    const [success, setSuccess] = useState(false)
     const emailRef = useRef();
-    const passwordRef = useRef();
-    const { login } = useAuth();
+    const { resetPassword } = useAuth();
     const navigate = useNavigate();
 
     async function handleSubmit(e){
@@ -18,11 +18,11 @@ export default function LoginModal(){
         try{
             setError('')
             setTrying(true)
-            await login(emailRef.current.value, passwordRef.current.value)
-            console.log('login succes')
-            navigate('/')
+            await resetPassword(emailRef.current.value)
+            console.log('password reset success')
+            setSuccess(true)
         } catch(response) {
-            setError('Failed to login')
+            setError('Failed to reset password')
             console.log(response)
         }
             setTrying(false)
@@ -33,19 +33,28 @@ export default function LoginModal(){
         <>
           
           <div className='modal-container'>
-            <h1>Log in</h1>
+            {!success &&
+                <h1>Reset password</h1>
+            }
             {error &&
                 <div className='loginregister-error'>
                     <p>{error}</p>
                 </div>
             }
-            <form action="" onSubmit={handleSubmit}>
+            {!success &&
+                <form action="" onSubmit={handleSubmit}>
                 <input type="text" placeholder='email' autoComplete='email' ref={emailRef} />
-                <input type="password" placeholder='password' autoComplete='new-password' ref={passwordRef} />
-                <button type="submit" name="" id="" disabled={trying}>Log in</button>
+                <button type="submit" name="" id="" disabled={trying}>Reset</button>
             </form>
-            <p onClick={() => navigate('/reset-password')} style={{color: '#EE7272'}}>Forgot password?</p>
-            <p onClick={() => navigate('/register')}>Don't have an account yet?</p>
+            }
+            {success &&
+                <p className='resetpassword-confirmation-text'>An email has been send to the email adress you provided. Check your inbox for further instructions.</p>
+            }
+            <p onClick={() => navigate('/login')}>Log in</p>
+            {!success &&
+                <p onClick={() => navigate('/register')}>Don't have an account yet?</p>
+            }
+            
             </div> 
             <div className='modal-underlay' onClick={() => navigate('/')}></div>
         </>
