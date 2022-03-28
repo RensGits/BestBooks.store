@@ -11,11 +11,21 @@ Technologies used:
 - Firebase
 - Lodash
 
-All components are build from scratch with the exeption of the Loader indicator:
-https://mhnpd.github.io/react-loader-spinner/
-
+The homepage features an overview of all books retrieved from the NYTimes API and provides the user to filter books on author, publisher, list rank and how long the book has been on it's current ranked list. From the homepage the user can easily navigate to the browse lists page where he/she can find an overview of all lists maintained by NYTimes. Lists are generated based on user ratings and are updated weekly or monthly. 
 ![homePage](./homePage.png)
+
+When clicking on a specific list the user can view each individual book to retrieve more information on said book, and quickly navigate to other books in that list on the right hand side.
 ![listView](./listView.png)
+
+The dynamic search functionality adds an additional way of filtering.
 ![search](./search.png)
+
+User authentication is done via firebase. 
 ![login](./login.png)
+
+A user can inspect and change it's own profile aswell as see & edit reviews they have posted.
 ![profile](./profile.png)
+
+All components are build from scratch with the exeption of the Loader indicator. Components are build in a way that is easy to understand and extensive use of external libraries is minimized. This no nonsense approach makes this application, in my opinion, highly maintainable.
+
+Loader indicator from: https://mhnpd.github.io/react-loader-spinner/
