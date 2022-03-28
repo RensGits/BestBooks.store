@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useDispatch } from 'react-redux'
 import { sortBy } from '../../redux/slices/sortBySlice';
 import './SortBy.css'

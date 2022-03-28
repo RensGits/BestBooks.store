@@ -43,7 +43,8 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
       const filteredByAuthor = checkboxFilter('author')
       const filteredByPublisher = checkboxFilter('publisher')
       const filteredByWeekRange = rangeFilter('weeks_on_list')
-      const allFiltersApplied = _.intersectionWith(filteredByAuthor, filteredByPublisher, filteredByWeekRange, _.isEqual); // returns books that are found in all filters
+      const filteredByRank = rangeFilter('rank')
+      const allFiltersApplied = _.intersectionWith(filteredByAuthor, filteredByPublisher, filteredByWeekRange, filteredByRank, _.isEqual); // returns books that are found in all filters
       setFilteredData(allFiltersApplied)
     },[filters])
 

@@ -1,6 +1,6 @@
 .sliderfilter-container{
     position: relative;
-    padding: 1em 0;
+    padding: 2em 0;
     width: 80%;
 }
 
@@ -27,8 +27,8 @@
 
 input[type='range']::-webkit-slider-thumb{
     appearance: none;
-    width: 0.7em;
-    height: 0.7em;
+    width: 0.65em;
+    height: 0.65em;
     background-color: #EE7272;
     border-radius: 1em;
     pointer-events: auto;

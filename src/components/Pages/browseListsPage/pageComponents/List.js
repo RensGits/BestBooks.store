@@ -13,7 +13,6 @@ export default function List(){
     const dispatch = useDispatch();
     const { listName } = useParams()
     useEffect(() => {
-        console.log(listName)
         dispatch(fetchListBooks(listName))
     },[])
     
@@ -37,9 +36,9 @@ export default function List(){
                 
                 <div className='books-grid-container'>
                     {
-                        _.map(booksData.results.books).map((itemData)=>{
+                        _.map(booksData.results.books).map((itemData, index)=>{
                             return(
-                                <ListItem data={itemData} listName={listName} />
+                                <ListItem data={itemData} listName={listName} key={'listItem' + index } />
                             )
                         })
                     }

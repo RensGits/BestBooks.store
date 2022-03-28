@@ -21,8 +21,6 @@ export default function BrowseLists(){ // BROWSE LISTS COMPONENT FOR BROWSELISTS
         }  
     },[])
     
-   
-    
     return(
         <div className='browselists-page-container'>
             <div className='lists-spacer'></div>
@@ -41,7 +39,7 @@ export default function BrowseLists(){ // BROWSE LISTS COMPONENT FOR BROWSELISTS
                 
                 <div className='list-grid-container'>
                     {
-                        _.map(listData.results,'list_name').map((item,index)=>{
+                        _.map(listData.results,'list_name').map((item, index)=>{
                             const list = item.split(' ').join('-').toLowerCase();
                             return(
                                 <Link to={`/browse-lists/${list}`} key={'browseList' + index}><p className='list-item'>{item}</p></Link>

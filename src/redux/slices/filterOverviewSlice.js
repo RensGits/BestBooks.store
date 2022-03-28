@@ -8,10 +8,17 @@ export const filterOverviewSlice = createSlice({
     weeks_on_list: {
       min: undefined,
       max: undefined
+    },
+    rank: {
+      min: undefined,
+      max: undefined
     }
   },
   reducers: {
     updateOverviewFilters: (state, action) => {
+      if(action.payload.type === 'rank'){
+        state.rank = action.payload.filters
+      }
       if(action.payload.type === 'weeks_on_list'){
         state.weeks_on_list = action.payload.filters
       }
