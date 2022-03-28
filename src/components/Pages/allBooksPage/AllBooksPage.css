@@ -11,3 +11,16 @@
     padding: 2em;
     background-color: #F9F9F9;
 }
+
+.allbooks-line-divider{
+    height: 100%;
+    width: 0.15em;
+    border-radius: 1em;
+    background-color: #E7E7E7;
+}
+
+@media only screen and (max-width: 990px){
+   .allbooks-content-container{
+       padding-right: 1em;
+   }
+  }

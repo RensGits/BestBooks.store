@@ -1,15 +1,25 @@
 .book-container{
     display: flex;
     justify-content: center;
+    position: relative;
     align-items: center;
     width: 5em;
     height: 6em;
+    margin-left: 2em;
+    overflow: visible
 }
 
+
 .book-image{
-    height: 100%;
+    height: 6em;
     width: auto;
     -webkit-box-shadow: 8px 10px 33px -4px rgba(0,0,0,0.47);
     -moz-box-shadow: 8px 10px 33px -4px rgba(0,0,0,0.47);
     box-shadow: 8px 10px 33px -4px rgba(0,0,0,0.47);
+    
 }
+
+.book-image:hover{
+    height: 7em;
+}
+

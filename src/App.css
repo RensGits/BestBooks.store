@@ -32,3 +32,18 @@ a:Link{
   text-decoration: none
 }
 
+.fetch-status-indicator{
+  padding-left: 3em;
+}
+
+@media only screen and (max-width: 1410px){
+  .app{
+      padding: 3em 3em;
+  }
+}
+
+@media only screen and (max-width: 990px){
+  .app{
+      padding: 3em 2em;
+  }
+}

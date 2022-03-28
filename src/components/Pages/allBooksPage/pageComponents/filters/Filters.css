@@ -1,9 +1,16 @@
 .filters-container{
-    flex: 2;
+    flex: 5;
     width: 100%;
+    padding-right: 1em;
 }
 
 .filter-header{
     font-family: 'Carme';
     font-size: 1rem;
+}
+
+@media only screen and (max-width: 1410px) {
+    .filters-container{
+        flex: 6
+    }
 }

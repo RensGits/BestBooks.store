@@ -18,7 +18,6 @@ const listBooksSlice = createSlice({
           results:{
             books: ''
           }
-          
       }
    },
   reducers: {

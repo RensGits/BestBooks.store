@@ -35,15 +35,13 @@ export default function SliderFilter(props){
         else setCurrentMaxValue(e.target.value)
     }
 
-    const handleFilter = () => {
-       
+    const handleFilter = () => {    
             dispatch(updateOverviewFilters({
                 type: 'weeks_on_list',
                 filters: {
                     min: parseInt(currentMinValue),
                     max: parseInt(currentMaxValue)
             }}))
-        
     }
 
     return(

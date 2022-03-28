@@ -10,6 +10,7 @@ export default function AllBooks(){ // ALLBOOKS PAGE
             <SortBy />
             <div className='allbooks-content-container'>
                 <Filters />
+                <div className='allbooks-line-divider'></div>
                 <BooksOverview />
             </div>
         </div>

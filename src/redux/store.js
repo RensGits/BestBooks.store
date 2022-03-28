@@ -14,23 +14,22 @@ import allBooksReducer from './slices/allBooksSlice';
 import allListsReducer from './slices/allListsSlice';
 import listBooksReducer from './slices/listBooksSlice';
 import filterOverviewReducer from './slices/filterOverviewSlice';
-
-
-
+import sortByReducer from './slices/sortBySlice';
 
 const reducers = combineReducers({
-    searchInput: searchInputReducer,
     allBooks: allBooksReducer,
     allLists: allListsReducer,
     listBooks: listBooksReducer,
     overviewFilters: filterOverviewReducer,
+    searchInput: searchInputReducer,
+    sortBy: sortByReducer
 })
 
 const persistConfig = {
   key: 'root',
   version: 1,
   storage: storage,
-  blacklist: ['searchInput','overviewFilters','weekFilters']
+  blacklist: ['searchInput','overviewFilters','weekFilters','sortBy']
 }
 
 const persistedReducer = persistReducer(persistConfig,reducers);

@@ -2,14 +2,17 @@ import './BooksOverview.css'
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllBooks } from '../../../../../redux/slices/allBooksSlice';
+import { Oval } from 'react-loader-spinner';
 import Book from '../book/Book';
 import _ from 'lodash'
+
 
 export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON ALL BOOKS TAB
 
     const loadingStatus = useSelector((state => state.allBooks.loading)) // fetch status from allBooksSlice
-    const data = useSelector((state) => state.allBooks.data)
+    const sorting = useSelector((state) => state.sortBy)
     const filters = useSelector((state) => state.overviewFilters)
+    const [data,setData] = useState(useSelector((state) => _.orderBy(state.allBooks.data,['rank'],['asc'])))
     const [filteredData,setFilteredData] = useState([])
     const dispatch = useDispatch();
 
@@ -35,7 +38,7 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
       else return data
     }
 
-    useEffect(() => {
+    useEffect(() => { // filters books when a filter is changed
       const filteredByAuthor = checkboxFilter('author')
       const filteredByPublisher = checkboxFilter('publisher')
       const filteredByWeekRange = rangeFilter('weeks_on_list')
@@ -43,8 +46,22 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
       setFilteredData(allFiltersApplied)
     },[filters])
 
+    useEffect(() => {
+      if(filteredData.length > 0){
+        setData(
+          _.orderBy(data, [sorting.type], [sorting.order])
+        )
+      }
+      else setFilteredData(
+          _.orderBy(filteredData, [sorting.type], [sorting.order])
+        )
+      
+     
+      
+    },[sorting])
+
     function DisplayedData(){ // returns original fetched data if no filters are applied, else returns filtered data
-      if((filters.author.length > 0) || (filters.publisher.length > 0)){
+      if((filters.author.length > 0) || (filters.publisher.length > 0) || (filters.weeks_on_list.min !== undefined)){
         return filteredData.map((book,index) => {
           return <Book data={book} key={index} />
       })
@@ -58,11 +75,21 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
 
     return(
         <div className='booksoverview-container'>
-          {loadingStatus === 'loading' &&   
-            <p>loading...</p>
+          {loadingStatus === 'loading' &&
+          <div className='spinner-loader'>
+              <Oval
+              ariaLabel="loading-indicator"
+              height={100}
+              width={100}
+              strokeWidth={5}
+              color="#EE7272"
+              secondaryColor="#e9e6e6"
+              />
+          </div>
+           
           }
           {loadingStatus === 'rejected' &&  
-             <p>Something went wrong. Please refresh this page and see if the error resolves. If not please contact our service-desk.</p>
+             <p className='fetch-status-indicator'>Something went wrong. Please refresh this page and see if the error resolves. If not please come back at a later time.</p>
           }
           {loadingStatus === 'completed' &&
             <div className='booksoverview-grid'>

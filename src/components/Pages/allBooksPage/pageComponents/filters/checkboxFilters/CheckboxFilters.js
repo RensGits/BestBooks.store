@@ -35,7 +35,7 @@ export default function CheckBoxFilter(props){
                 {   props.data.map((item,index) => {  // return item checkbox for each item
                         return( 
                                 <div className='checkbox-label-container' key={'checkBox' + index}>
-                                    <label className='checkbox-label' htmlFor={item}>{item}</label>
+                                    <label className='checkbox-label' htmlFor={item}>{item.split('and',)[0].split('with')[0].split(',')[0]}</label>
                                     <input className='checkbox-input' type="checkbox" id={item} value={item} onChange={handleChange} />
                                 </div>
                         )

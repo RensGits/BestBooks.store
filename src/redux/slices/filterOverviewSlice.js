@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-
 export const filterOverviewSlice = createSlice({
   name: 'overviewFilters',
   initialState: {

@@ -1,13 +1,21 @@
 .booksoverview-container{
-    flex: 8;
+    flex: 16;
     width: 100%;
     overflow: scroll;
+    justify-content: center;
+    align-items: center;
 }
 
 .booksoverview-grid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, 7em);
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 3em;
-    padding: 0 2em;
+    padding: 0 1em;
+}
+
+.spinner-loader{
+    margin-top: 30%
 }

@@ -25,3 +25,7 @@
     -moz-box-shadow: 8px 10px 33px -4px rgba(0,0,0,0.47);
     box-shadow: 8px 10px 33px -4px rgba(0,0,0,0.47);
 }
+
+.list-item-image:hover{
+    height: 75%;
+}

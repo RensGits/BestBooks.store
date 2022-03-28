@@ -1,6 +1,7 @@
 
 .checkboxes-container{
     display: flex;
+    position: relative;
     flex-direction: column;
     align-content: space-around;
     height: 10em;
@@ -9,19 +10,47 @@
     padding-right: 0.9em;
 }
 
+.checkbox-container > input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
 .checkbox-label-container{
     display: flex;
+    position: relative;
     align-items: center;
-    height: 2em;
+    height: fit-content;
+    padding: 0.2em 0;
 }
 
 .checkbox-label{
     font-family: 'Carme';
     font-size: 0.8rem;
+    padding-right: 0.5em;
+    width: 80%;
 }
 
 .checkbox-input{
-    width: fit-content;
-    background-color: red;
-    border: none;
+    right: 0.7em;
+    width: 0.6em;
+    height: 0.6em;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #e9e6e6;
 }
+
+.checkbox-input:checked{
+    background-color: #EE7272
+}
+
+@media only screen and (max-width: 990px){
+    .checkboxes-container{
+        padding-right: 0;
+    }
+  }
+
+
+
