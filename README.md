@@ -8,6 +8,7 @@ Technologies used:
 - Redux Toolkit
 - Redux Thunks
 - React-router
+- Firebase
 - Lodash
 
 All components are build from scratch with the exeption of the Loader indicator:
