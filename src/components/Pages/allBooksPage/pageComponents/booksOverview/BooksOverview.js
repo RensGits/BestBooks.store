@@ -33,7 +33,7 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
     function rangeFilter(category){  // filters book by filter categroy of type range
       if(filters[category].min !== undefined){
         return _.filter(data, function(book){
-          return book[category] >= filters[category].min && book[category] <= filters[category].max 
+          return book[category] >= filters[category].min && book[category] <= filters[category].max
         })
       }
       else return data
