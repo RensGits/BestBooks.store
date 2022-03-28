@@ -1,0 +1,77 @@
+.loginregister-page-container{
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    
+}
+
+.login-container, .register-container, .loggedin-container{
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    width: 5em;
+}
+
+.login-container > a, .register-container > a, .loggedin-container > p{
+    font-family: 'Carme';
+    font-size: 0.9rem;
+    color: black;
+}
+
+.loggedin-container{
+    width: 20em;
+}
+
+.info-icon-container{
+    width: 1em;
+    margin-left: 1.4em;
+}
+
+.login-register-icon-container{
+    width: 0.9em;
+    margin-left: 1em
+}
+
+.modal-underlay{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(128, 128, 128, 0.205);
+    z-index: 20;
+}
+
+.profileoptions-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding: 1em;
+    top:1.2em;
+    width: 7em;
+    height: auto;
+    right: 0;
+    background-color: white;
+    z-index: 20;
+    -webkit-box-shadow: 8px 10px 10px -4px rgba(0,0,0,0.20);
+    -moz-box-shadow: 8px 10px 10px -4px rgba(0,0,0,0.20);
+    box-shadow: 8px 10px 10px -10px rgba(0,0,0,0.20);
+}
+
+.profileoptions-container > a{
+    display: flex;
+    justify-content: flex-end;
+    text-align: end;
+    margin: 0.3em 0;
+    font-family: 'Carme';
+    font-size: 0.8rem;
+    color: black;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.profile-dropdown-icon{
+    width: fit-content;
+    padding-left: 0.5em;
+}
+

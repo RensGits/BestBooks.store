@@ -1,21 +1,24 @@
 import './App.css';
-import LoginRegister from './components/loginRegister/LoginRegister.js';
 import NavigationBar from './components/navigation/NavigationBar.js';
 import Router from './router/Router';
 import { BrowserRouter } from "react-router-dom";
+import LoginRegister from './components/loginRegister/loginRegisterHeader/LoginRegisterHeader';
+import { AuthProvider } from './contexts/AuthContext';
 
 function App() {
 
   return (
-    <div className="app">
-      <div>
-        <LoginRegister />
+    <AuthProvider>
+      <div className="app">
+        <BrowserRouter>
+        <div>
+          <LoginRegister />
+        </div>
+        <NavigationBar />
+          <Router/>
+        </BrowserRouter>   
       </div>
-      <BrowserRouter>
-      <NavigationBar />
-        <Router/>
-      </BrowserRouter>   
-    </div>
+    </AuthProvider>
   );
 }
 
