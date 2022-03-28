@@ -14,4 +14,5 @@ All components are build from scratch with the exeption of the Loader indicator:
 https://mhnpd.github.io/react-loader-spinner/
 
 ![homePage](./homePage.png)
+![search](./search.png)
 ![listView](./listView.png)
