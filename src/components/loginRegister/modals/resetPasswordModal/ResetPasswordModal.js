@@ -19,11 +19,9 @@ export default function ResetPasswordModal(){
             setError('')
             setTrying(true)
             await resetPassword(emailRef.current.value)
-            console.log('password reset success')
             setSuccess(true)
         } catch(response) {
             setError('Failed to reset password')
-            console.log(response)
         }
             setTrying(false)
         

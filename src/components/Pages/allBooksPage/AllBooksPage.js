@@ -7,12 +7,12 @@ import { Outlet } from 'react-router-dom'
 export default function AllBooks(){ // ALLBOOKS PAGE
 
     return(
-        <div className='allbooks-page-container'>
+        <div className='page-container'>
             <Outlet/>
             <SortBy />
-            <div className='allbooks-content-container'>
+            <div className='content-container'>
                 <Filters />
-                <div className='allbooks-line-divider'></div>
+                <div className='line-divider'></div>
                 <BooksOverview />
             </div>
         </div>

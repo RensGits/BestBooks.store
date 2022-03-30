@@ -4,6 +4,8 @@ import { useLocation } from 'react-router-dom'
 import Header from '../../header/Header'
 import BookData from './pageComponents/bookData/BookData'
 import SideList from './pageComponents/sideList/SideList.js'
+import BookReviews from './pageComponents/bookReviews/BookReviews.js'
+import PostReview from './pageComponents/postReview/PostReview'
 
 
 export default function ListDetails(){
@@ -13,13 +15,7 @@ export default function ListDetails(){
     const currentSelectedBookTitle = location.state.bookTitle
     const currentSelectedBookData = location.state.bookData
     const isList = location.pathname.includes('browse-list')
-    
-    console.log(location.state)
-    
-    console.log(currentSelectedBookData)
 
-    
-    
     return(
         <>
             <div className='lists-spacer'></div>
@@ -36,17 +32,18 @@ export default function ListDetails(){
                 
                 <img className='listdetails-bookdetails-backgroundimage' src={currentSelectedBookData.book_image} alt="" />
                 <div className='listdetails-container'>
-                        <img className='listdetails-bookdetails-image' src={currentSelectedBookData.book_image} alt="" />
-                        <BookData data={currentSelectedBookData}/>
-                        {isList &&
-                            <SideList currentSelectedBookTitle={currentSelectedBookTitle} listName={listName} />
-                        }
-                        
+                    <div>
+                        <div className='listdetails-data-container'>
+                            <img className='listdetails-bookdetails-image' src={currentSelectedBookData.book_image} alt="" />
+                            <BookData data={currentSelectedBookData}/>
+                        </div>
+                        <BookReviews currentSelectedBookTitle={currentSelectedBookData.title} />
+                        <PostReview currentSelectedBookTitle={currentSelectedBookData.title} />
+                    </div>
+                    {isList &&
+                        <SideList currentSelectedBookTitle={currentSelectedBookTitle} listName={listName} />
+                    } 
                 </div>
-                <div className='listdetails-review-container'>
-
-                </div>
-                
             </div>
         </>
     )

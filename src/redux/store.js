@@ -15,6 +15,7 @@ import allListsReducer from './slices/allListsSlice';
 import listBooksReducer from './slices/listBooksSlice';
 import filterOverviewReducer from './slices/filterOverviewSlice';
 import sortByReducer from './slices/sortBySlice';
+import postReviewReducer from './slices/postReviewSlice';
 
 const reducers = combineReducers({
     allBooks: allBooksReducer,
@@ -22,7 +23,8 @@ const reducers = combineReducers({
     listBooks: listBooksReducer,
     overviewFilters: filterOverviewReducer,
     searchInput: searchInputReducer,
-    sortBy: sortByReducer
+    sortBy: sortByReducer,
+    postReview: postReviewReducer,
 })
 
 const persistConfig = {

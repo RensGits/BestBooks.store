@@ -38,8 +38,8 @@ export default function LoggedIn(){
         </div>
         {openProfileOptions &&
             <div className='profileoptions-container'>
-                <Link to={'/profile'}>my profile <RiProfileLine className='profile-dropdown-icon' /></Link>
-                <Link to={'/profile'} >my reviews<MdOutlineRateReview className='profile-dropdown-icon' /></Link>
+                <Link to={'/profile/my-profile'}>my profile <RiProfileLine className='profile-dropdown-icon' /></Link>
+                <Link to={'/profile/my-reviews'} >my reviews<MdOutlineRateReview className='profile-dropdown-icon' /></Link>
                 <a onClick={handleSignOut}>sign out<VscSignOut className='profile-dropdown-icon' /></a>
             </div>
         }

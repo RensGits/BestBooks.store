@@ -19,7 +19,8 @@ export default function Router(){
                 <Route path="reset-password" element={<ResetPasswordModal />} />
             </Route> 
             <Route exact path='/' element={<PrivateRoute/>}> 
-                <Route path="/my-profile" element={<UserProfilePage />} /> 
+                <Route path="/profile/my-profile" element={<UserProfilePage />} /> 
+                <Route path="/profile/my-reviews" element={<UserProfilePage />} /> 
             </Route>
             <Route path="/browse-lists" element={<BrowseListsPage />} />
             <Route path="/browse-lists/:listName" element={<List/>} />

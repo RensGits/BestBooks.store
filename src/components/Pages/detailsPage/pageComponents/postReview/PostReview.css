@@ -1,0 +1,65 @@
+.postreview-container{
+    padding: 3em 14em 3em 3em;
+    background-color: white;
+    width: 85%;
+}
+.preview-modal-container{
+    max-height: 30em;
+    overflow-y: scroll;
+}
+
+.myrating-container{
+    display: flex;
+}
+
+.myrating-header{
+    font-size: 1rem;
+    width: fit-content;
+    margin-right: 0.4em;
+}
+
+.postreview-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.postreview-form > textarea{
+    min-height: 14em;
+    padding: 1em;
+    font-size: 0.9rem;
+    font-family: 'Carme';
+    background-color: #FAFAFA;
+    border: none;
+}
+
+.postreview-form > button{
+    align-self: flex-end;
+    width: 7em ;
+    height: 2.2em;
+    margin-top: 1em;
+    border-radius: 0;
+    border-style: none;
+    color: white;
+    background-color: #FF5959;
+    font-family: 'Carme';
+    font-size: 0.8rem;
+}
+
+.previewreview-container{
+    min-height: 40em;
+}
+
+.preview-header{
+    margin-bottom: 1em;
+    font-size: 0.9rem !important;
+    color: rgb(184, 184, 184) !important
+}
+
+.please-login{
+    font-size: 1rem;
+    text-decoration: underline;
+}
+.please-login:hover{
+    color: #FF5959;
+    cursor: pointer;
+}

@@ -19,11 +19,9 @@ export default function LoginModal(){
             setError('')
             setTrying(true)
             await login(emailRef.current.value, passwordRef.current.value)
-            console.log('login succes')
             navigate('/')
         } catch(response) {
             setError('Failed to login')
-            console.log(response)
         }
             setTrying(false)
         

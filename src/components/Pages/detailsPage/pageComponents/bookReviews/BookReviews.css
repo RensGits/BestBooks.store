@@ -1,0 +1,43 @@
+.reviews-container{
+    padding: 3em 14em 3em 3em;
+    background-color: white;
+    width: 85%;
+}
+
+.reviews-header{
+    font-size: 1.4rem;
+    font-style: italic;
+}
+
+.review-container{
+    margin-bottom: 3em;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-container > p{
+    font-family: 'Carme';
+    font-size: 1rem;
+}
+
+.review-header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3em;
+}
+
+.review-header > p {
+    width: fit-content;
+}
+
+.review-user{
+    font-size: 1.1rem;
+}
+
+.review-date{
+    font-size: 1rem;
+}
+
+.review-review{
+    margin-top: 1em
+}

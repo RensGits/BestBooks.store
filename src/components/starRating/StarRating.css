@@ -1,0 +1,15 @@
+.starrating-container-static{
+    display: flex;
+    width: 4.9em;
+}
+
+.starrating-container-dynamic{
+    display: flex;
+    width: 5em;
+}
+
+.starrating-star{
+    margin-left: 0.1rem;
+}
+
+

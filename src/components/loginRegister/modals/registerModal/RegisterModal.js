@@ -7,7 +7,6 @@ export default function RegisterModal(){
 
     const [error, setError] = useState('')
     const [trying, setTrying] = useState(false)
-    const userNameRef = useRef();
     const emailRef = useRef();
     const passwordRef = useRef();
     const passwordConfirmRef = useRef();
@@ -44,10 +43,9 @@ export default function RegisterModal(){
                     </div>
                 }
                 <form action="" onSubmit={handleSubmit}>
-                    <input type="text" placeholder='username' autoComplete='username' ref={userNameRef} />
-                    <input type="text" placeholder='email' autoComplete='email' ref={emailRef} />
-                    <input type="password" placeholder='password' autoComplete='new-password' ref={passwordRef} />
-                    <input type="password" placeholder='confirm password' autoComplete='new-password' ref={passwordConfirmRef} />
+                    <input type="text" placeholder='email' autoComplete='email' ref={emailRef} required />
+                    <input type="password" placeholder='password' autoComplete='new-password' ref={passwordRef} required />
+                    <input type="password" placeholder='confirm password' autoComplete='new-password' ref={passwordConfirmRef} required />
                     <button type="submit" name="" id="" disabled={trying}>Register</button>
                 </form>
                 <p onClick={() => navigate('/login')}>Or log in</p>
