@@ -49,7 +49,7 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
     },[filters])
 
     useEffect(() => {
-      if(filteredData.length > 0){
+      if(filteredData.length === 0){
         setData(
           _.orderBy(data, [sorting.type], [sorting.order])
         )
@@ -57,9 +57,6 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
       else setFilteredData(
           _.orderBy(filteredData, [sorting.type], [sorting.order])
         )
-      
-     
-      
     },[sorting])
 
     function DisplayedData(){ // returns original fetched data if no filters are applied, else returns filtered data
