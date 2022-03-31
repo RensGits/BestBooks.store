@@ -27,6 +27,9 @@ User authentication is done via firebase.
 A user can inspect and change it's own profile aswell as see & edit reviews they have posted.
 ![profile](./profile.png)
 
+Users can leave reviews and view an overview of all their reviews in the profile tab.
+![reviews](./reviews.png)
+
 All components are build from scratch with the exeption of the Loader indicator. Components are build in a way that is easy to understand and extensive use of external libraries is minimized. This no nonsense approach makes this application, in my opinion, highly maintainable.
 
 Loader indicator from: https://mhnpd.github.io/react-loader-spinner/
