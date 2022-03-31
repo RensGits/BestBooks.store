@@ -1,11 +1,5 @@
 **THIS WEBAPP IS STILL UNDER CONSTRUCTION**
 
-****TODO:
-- Make fully responsive
-- Filter counters (show how many books exist after filtering through parent filters)
-- Edit review functionality
-- Safari compatibility****
-
 A React app for looking up books and book lists from the 'New York Times' Books API. 
 
 Link to deployment: https://bestbooks-51a67.web.app
@@ -44,5 +38,9 @@ All components are build from scratch with the exeption of the Loader indicator.
 
 Loader indicator from: https://mhnpd.github.io/react-loader-spinner/
 
-
+TODO:
+- Make fully responsive
+- Filter counters (show how many books exist after filtering through parent filters)
+- Edit review functionality
+- Safari compatibility
 
