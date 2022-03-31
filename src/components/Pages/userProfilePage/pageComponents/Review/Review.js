@@ -1,19 +1,35 @@
 import { useState } from "react"
 import StarRatingStatic from "../../../../starRating/StarRatingStatic";
 import { IoIosArrowUp, IoIosArrowDown } from 'react-icons/io'
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Review(props){
 
+    const navigate = useNavigate();
+
     const [openReview, setOpenReview] = useState();
+
+    const formattedTitle = props.book.title.toLowerCase().split(',').join('').split(' ').join('-')
+
 
     const handleExpand = () => {
         setOpenReview(!openReview)
     }
 
+    const state = {
+        bookData: props.book,
+        bookTitle: formattedTitle
+    }
+
+    
+    
+
     return(
         <div>
             <div className="review-wrapper">
-                <img className='myreviews-book-image' key={'bookcover' + props.index} src={props.book.book_image} alt="" />
+                <Link to={`/book-details/${formattedTitle}/`} state={state}>
+                    <img className='myreviews-book-image' key={'bookcover' + props.index} src={props.book.book_image} alt="" onClick={() => navigate(`/book-details/${formattedTitle}`)} />
+                </Link>
                 <div className='myreviews-book-details'>
                     <p className='title'>{props.book.title}</p>
                     <p className='author'>{props.book.author}</p>

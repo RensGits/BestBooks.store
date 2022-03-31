@@ -5,10 +5,19 @@
     position: relative;
 }
 
+.review-wrapper > a{
+    width: unset;
+    height: unset;
+}
+
 .myreviews-book-image{
     height: 70%;
     width: auto;
     margin-right: 1em;
+}
+
+.myreviews-book-image:hover{
+    height: 75%;
 }
 
 .myreviews-book-details > .author{
