@@ -44,7 +44,7 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
       const filteredByPublisher = checkboxFilter('publisher')
       const filteredByWeekRange = rangeFilter('weeks_on_list')
       const filteredByRank = rangeFilter('rank')
-      const allFiltersApplied = _.intersectionWith(filteredByAuthor, filteredByPublisher, filteredByWeekRange, filteredByRank, _.isEqual); // returns books that are found in all filters
+      const allFiltersApplied = _.intersectionWith(filteredByRank, filteredByAuthor, filteredByPublisher, filteredByWeekRange, ); // returns books that are found in all filters
       setFilteredData(allFiltersApplied)
     },[filters])
 
@@ -60,7 +60,13 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
     },[sorting])
 
     function DisplayedData(){ // returns original fetched data if no filters are applied, else returns filtered data
-      if((filters.author.length > 0) || (filters.publisher.length > 0) || (filters.weeks_on_list.min !== undefined)){
+      if(
+        (filters.author.length > 0) || 
+        (filters.publisher.length > 0) || 
+        (filters.weeks_on_list.min !== undefined) || 
+        (filters.rank.min !== undefined) ||
+        (sorting.type)
+        ){
         return filteredData.map((book,index) => {
           return <Book data={book} key={index} />
       })

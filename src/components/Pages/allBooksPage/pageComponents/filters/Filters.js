@@ -17,8 +17,8 @@ export default function Filter(){ // FILTER COMPONENT FOR BOOKSOVERVIEW COMPONEN
         <div className='filters-container'>
             <CheckBoxFilter header="Authors" filterType='author' data={allAuthors} />
             <CheckBoxFilter header="Publishers" filterType='publisher' data={allPublishers} />
-            <SliderFilter header="List rank" filterType='rank' data={allRanks} />
             <SliderFilter header="Weeks on list" filterType='weeks_on_list' data={allWeeksOnList} />
+            <SliderFilter header="List rank" filterType='rank' data={allRanks} />
             
         </div>
     )

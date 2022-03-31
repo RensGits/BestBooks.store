@@ -22,6 +22,10 @@
     color: black;
 }
 
+.register-container{
+    margin-right: 1.2em;
+}
+
 .loggedin-container{
     width: 20em;
 }
