@@ -67,7 +67,7 @@
   color: rgb(78, 78, 78)
 }
 
-.modal-container > form > input{
+.modal-container > form > input, .profile-input{
   background-color: #F9F9F9;
   border-style: none;
   height: 3em;
@@ -77,9 +77,13 @@
   margin: 0.5em 0;
 }
 
+.profile-input{
+  background-color: white;
+}
 
 
-.modal-container > form > button, .modal-button{
+
+.modal-container > form > button, .modal-button, .profile-button{
   margin-top: 0.5em;
   margin-bottom: 0.1em;
   width: 100%;
@@ -96,6 +100,11 @@
   text-align: start;
   text-decoration: unset;
   font-size: 1rem;
+}
+
+.modalexpand-icon{
+  width: 2em;
+  margin-left: 2em;
 }
 
 @media only screen and (max-width: 990px){

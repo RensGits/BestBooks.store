@@ -6,6 +6,8 @@ import AllBooksPage from "../components/Pages/allBooksPage/AllBooksPage.js"
 import BrowseListsPage from "../components/Pages/browseListsPage/BrowseListsPage.js"
 import List from "../components/Pages/browseListsPage/pageComponents/List.js"
 import ListDetails from "../components/Pages/detailsPage/ListDetails.js"
+import MyReviews from "../components/Pages/userProfilePage/pageComponents/myReviews/MyReviews.js"
+import UpdateProfile from "../components/Pages/userProfilePage/pageComponents/updateProfile/UpdateProfile.js"
 import UserProfilePage from "../components/Pages/userProfilePage/UserProfilePage.js"
 import PrivateRoute from "./PrivateRoute.js"
 
@@ -19,8 +21,11 @@ export default function Router(){
                 <Route path="reset-password" element={<ResetPasswordModal />} />
             </Route> 
             <Route exact path='/' element={<PrivateRoute/>}> 
-                <Route path="/profile/my-profile" element={<UserProfilePage />} /> 
-                <Route path="/profile/my-reviews" element={<UserProfilePage />} /> 
+                <Route path="/profile" element={<UserProfilePage />}>
+                    <Route path="/profile/my-profile" element={<UpdateProfile />} /> 
+                    <Route path="/profile/my-reviews" element={<MyReviews />} /> 
+                </Route>
+                
             </Route>
             <Route path="/browse-lists" element={<BrowseListsPage />} />
             <Route path="/browse-lists/:listName" element={<List/>} />

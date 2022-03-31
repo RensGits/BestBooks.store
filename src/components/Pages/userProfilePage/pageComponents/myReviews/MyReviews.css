@@ -1,0 +1,22 @@
+.review-wrapper{
+    display: flex;
+    height: 5em;
+    overflow-y: scroll;
+    position: relative;
+}
+
+.myreviews-book-image{
+    height: 70%;
+    width: auto;
+    margin-right: 1em;
+}
+
+.myreviews-book-details > .author{
+    margin-top: 0.3em;
+    font-size: 0.95rem
+}
+
+.myreviews-review{
+    margin-bottom: 3em;
+    font-size: 1rem;
+}
