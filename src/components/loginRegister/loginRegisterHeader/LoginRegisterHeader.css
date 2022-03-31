@@ -2,7 +2,11 @@
     display: flex;
     position: relative;
     justify-content: flex-end;
-    
+}
+
+.loginregister-wrapper{
+    display: flex;
+    justify-content: flex-end;
 }
 
 .login-container, .register-container, .loggedin-container{
@@ -24,12 +28,11 @@
 
 .info-icon-container{
     width: 1em;
-    margin-left: 1.4em;
 }
 
 .login-register-icon-container{
     width: 0.9em;
-    margin-left: 1em
+    margin: 0 1.5em;
 }
 
 .modal-underlay{
@@ -42,7 +45,7 @@
     z-index: 20;
 }
 
-.profileoptions-container{
+.profileoptions-container, .info-container{
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -56,6 +59,17 @@
     -webkit-box-shadow: 8px 10px 10px -4px rgba(0,0,0,0.20);
     -moz-box-shadow: 8px 10px 10px -4px rgba(0,0,0,0.20);
     box-shadow: 8px 10px 10px -10px rgba(0,0,0,0.20);
+}
+
+.info-container{
+    width: 30%;
+    padding: 2em;
+}
+
+.info-container p{
+    margin-top: 1.6em;
+    font-size: 1rem;
+    line-height: 1.4rem;
 }
 
 .profileoptions-container > a{

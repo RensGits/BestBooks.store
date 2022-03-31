@@ -12,6 +12,11 @@
     margin-bottom: 2em;
 }
 
+.userprofile-menu-container > p:hover{
+    cursor: pointer;
+    color: #FF5959;
+}
+
 .profile-container{
     display: flex;
     flex-direction: column;

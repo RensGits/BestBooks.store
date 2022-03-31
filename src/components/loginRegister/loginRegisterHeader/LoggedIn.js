@@ -13,8 +13,11 @@ export default function LoggedIn(){
     const navigate = useNavigate();
     const [error, setError] = useState('')
     const [openProfileOptions, setOpenProfileOptions] = useState(false)
-    const handleOpenProfileOptions = () => {
-        setOpenProfileOptions(!openProfileOptions)
+    const handleOpen = () => {
+        setOpenProfileOptions(true)
+    }
+    const handleClose = () => {
+        setOpenProfileOptions(false)
     }
 
     async function handleSignOut(){
@@ -29,12 +32,12 @@ export default function LoggedIn(){
         }
     }
     return(
-        <>
+        <div onMouseEnter={handleOpen} onMouseLeave={handleClose} className='loginregister-wrapper'>
         <div className='loggedin-container'>
             <p>Hi {currentUser.email}!</p>
         </div>
-        <div className='login-register-icon-container'>
-            <CgProfile onClick={handleOpenProfileOptions}/>
+        <div className='login-register-icon-container' >
+            <CgProfile />
         </div>
         {openProfileOptions &&
             <div className='profileoptions-container'>
@@ -43,6 +46,6 @@ export default function LoggedIn(){
                 <a onClick={handleSignOut}>sign out<VscSignOut className='profile-dropdown-icon' /></a>
             </div>
         }
-        </>
+        </div>
     ) 
 }

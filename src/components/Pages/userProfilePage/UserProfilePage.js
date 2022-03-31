@@ -14,7 +14,7 @@ export default function UserProfilePage(){
                     <p onClick={() => navigate('my-profile')}>My Profile</p>
                     <p onClick={() => navigate('my-reviews')}>My Reviews</p>
                 </div>
-                <div className='line-divider'></div>
+                <div className='line-divider' style={{height: 'auto'}}></div>
                 <Outlet/>
             </div>
         </div>
