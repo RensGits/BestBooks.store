@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/RensGits/BestBooks.store/static/css/main.d7b18f59.css",
+    "main.js": "/RensGits/BestBooks.store/static/js/main.e9b01c99.js",
+    "static/js/787.60b0d6d8.chunk.js": "/RensGits/BestBooks.store/static/js/787.60b0d6d8.chunk.js",
+    "index.html": "/RensGits/BestBooks.store/index.html",
+    "main.d7b18f59.css.map": "/RensGits/BestBooks.store/static/css/main.d7b18f59.css.map",
+    "main.e9b01c99.js.map": "/RensGits/BestBooks.store/static/js/main.e9b01c99.js.map",
+    "787.60b0d6d8.chunk.js.map": "/RensGits/BestBooks.store/static/js/787.60b0d6d8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d7b18f59.css",
+    "static/js/main.e9b01c99.js"
+  ]
+}
