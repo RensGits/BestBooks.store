@@ -41,3 +41,10 @@
 .review-review{
     margin-top: 1em
 }
+
+@media only screen and (max-width: 640px){
+    .reviews-container{
+        width: 100%;
+        padding: 2em;
+    }
+}

@@ -32,3 +32,26 @@
     height: auto;
     opacity: 7%;
 }
+
+
+@media only screen and (max-width: 885px){
+    .listdetails-bookdetails-image{
+        width: 7em;
+    }
+}
+
+@media only screen and (max-width: 640px){
+    .listdetails-container{
+        padding: 4em 0 0 0;
+    }
+
+    .listdetails-data-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } 
+
+    .listdetails-bookdetails-image{
+        margin-bottom: 3em;
+    }
+}

@@ -8,9 +8,43 @@
     right:-6em;
 }
 
+.books-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5em;
+}
+
 .books-grid-container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 8em 6em 0em 6em;
+    place-content: center;
+    grid-template-columns: repeat(auto-fill, 15em);
+
 }
+
+@media only screen and (max-width: 1410px){
+    .list-title-container{
+        right: -3em;
+    }
+}
+
+@media only screen and (max-width: 885px){
+    .underline-container > p, .list-indicator {
+        font-size: 1.1rem;
+    }
+    .list-title-container{
+        right: -2em;
+    }
+}
+
+@media only screen and (max-width: 640px){
+    .underline-container > p, .list-indicator {
+        font-size: 1rem;
+    }
+}
+
+.list-title-container{
+    top: 1.5em;
+}
+
 

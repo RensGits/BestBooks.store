@@ -63,3 +63,10 @@
     color: #FF5959;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 640px){
+    .postreview-container{
+        width: 100%;
+        padding: 2em;
+    }
+}

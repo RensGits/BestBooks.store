@@ -11,3 +11,9 @@
 .backarrow-text:hover{
     cursor: pointer;
 }
+
+@media only screen and (max-width: 640px){
+    .backarrow-text{
+        font-size: 1rem;
+    }
+}

@@ -51,7 +51,7 @@ export default function SearchBar(){
                 onFocus={() => setBlur(false)}/>
                 
             <BiSearch className='search-icon' color='light-gray' />
-            {(data.length !== allBooks.length) &&
+            {(data.length !== allBooks.length && data.length !== 0) &&
                 <div className='search-results-wrapper'  >
                     
                     <div className='search-results-container' onMouseDown={(e) => e.preventDefault()}>

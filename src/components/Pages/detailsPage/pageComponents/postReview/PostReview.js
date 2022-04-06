@@ -50,34 +50,33 @@ export default function PostReview(props){
             <hr className='header-underline' />
             {currentUser &&
                 <>
-                       <div className='myrating-container'>
-                <p className='myrating-header'>My rating: </p>
-                <StarRatingDynamic/>
-            </div>
-            <form className='postreview-form' onSubmit={handleSubmit} action="" >
-                <textarea ref={textAreaRef}  />
-                <button type="submit" name="" id="">Post</button>
-            </form>
-            {confirmModal &&
-                <div className='modal-container preview-modal-container'>
-                        <p className='preview-header'>Preview</p>
-                        <div className='review-container' >
-                            <div className='review-header'>
-                                <p className='review-user'>{reviewData.email + ' rated it:'}</p>
-                                <p className='review-date'>{'date: ' + reviewData.date}</p>
-                            </div>
-                            <StarRatingStatic rating={reviewData.rating} />
-                            <p className='review-review'>{reviewData.review}</p>
-                        </div>
-                        <button className='modal-button' onClick={handleConfirm}>Confirm</button>
+                    <div className='myrating-container'>
+                        <p className='myrating-header'>My rating: </p>
+                        <StarRatingDynamic/>
                     </div>
-            }
+                    <form className='postreview-form' onSubmit={handleSubmit} action="" >
+                        <textarea ref={textAreaRef}  />
+                        <button type="submit" name="" id="">Post</button>
+                    </form>
+                    {confirmModal &&
+                        <div className='modal-container preview-modal-container'>
+                                <p className='preview-header'>Preview</p>
+                                <div className='review-container' >
+                                    <div className='review-header'>
+                                        <p className='review-user'>{reviewData.email + ' rated it:'}</p>
+                                        <p className='review-date'>{'date: ' + reviewData.date}</p>
+                                    </div>
+                                    <StarRatingStatic rating={reviewData.rating} />
+                                    <p className='review-review'>{reviewData.review}</p>
+                                </div>
+                                <button className='modal-button' onClick={handleConfirm}>Confirm</button>
+                            </div>
+                    }
                 </>
             }
             {!currentUser &&
                 <p className='please-login' onClick={() => navigate('/login')}>Please log in to leave a review</p>
-            }
-         
+            }   
         </div>
     )
 }

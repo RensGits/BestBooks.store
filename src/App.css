@@ -135,6 +135,10 @@
   }
 }
 
+.modal-close-icon{
+  display: none;
+}
+
 @media only screen and (max-width: 990px){
 
 .app{
@@ -204,6 +208,14 @@ a:Link{
   .header-alignment-container-filters, .header-alignment-container-sortby{
     padding-top: 1em;
   }
+
+  .modal-close-icon{
+    display: unset;
+    position: absolute;
+    top: 0.7em;
+    right: 0.7em;
+    width: 1em;
+  }
 }
 
 @media only screen and (max-width: 640px){
@@ -211,10 +223,5 @@ a:Link{
     width: 85%;
   }
 
-  .modal-close-icon{
-    position: absolute;
-    top: 0.7em;
-    right: 0.7em;
-    width: 1em;
-  }
+ 
 }

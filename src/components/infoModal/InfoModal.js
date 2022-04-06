@@ -1,9 +1,11 @@
 import '../loginRegister/loginRegisterHeader/LoginRegisterHeader.css'
 import { useState } from "react"
-import { AiOutlineInfoCircle } from 'react-icons/ai'
+import { AiOutlineInfoCircle, AiOutlineCloseCircle } from 'react-icons/ai'
+import { useNavigate } from 'react-router-dom'
+
 
 export default function InfoModal(){
-
+    const navigate = useNavigate
     const [openInfo, setOpenInfo] = useState(false)
     const handleOpen = () => {
         setOpenInfo(true)
@@ -15,13 +17,17 @@ export default function InfoModal(){
     return(
         
         <div onMouseEnter={handleOpen} onMouseLeave={handleClose} className='loginregister-wrapper'>
-            <div> 
+            <div>  
                 <AiOutlineInfoCircle className='info-icon-container' />
             </div>
            
             
                 {openInfo &&
-                   <div className='info-container'>                 
+
+                   <div className='info-container'>   
+                        <div className='modal-close-icon' onClick={() => navigate('/')}>
+                            <AiOutlineCloseCircle />
+                        </div>
                         <h1>Welcome to BestBooks!</h1>
                         <p>BestBooks is a web application for browsing books retrieved from the 'New York Times' Books API. This API provides data on all books rated and reviewed by the New York Times. BestBooks offers multiple ways to navigate to your new favorite title. 
                         <br/><br/>

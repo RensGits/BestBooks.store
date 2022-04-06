@@ -6,4 +6,4 @@ export function getCurrentDate(){
     const year = newDate.getFullYear();
     
     return `${date}/${month<10?`0${month}`:`${month}`}/${year}`
-    }
+}

@@ -17,13 +17,31 @@
     height: 2em;
 }
 
+
 .soldat-item{
-    padding-right: 3em;
-    height: fit-content;
     color: black;
     font-size: 1rem;
+    white-space: nowrap;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+  
+}
+
+.soldat-item a{
+    width: fit-content
 }
 
 .soldat-item:hover{
     color: #E11F1F
 }
+
+@media only screen and (max-width: 885px){
+    .bookdata-container{
+        padding-right: 3em;
+        padding-left: 2em;
+    }
+}
+
+
+
