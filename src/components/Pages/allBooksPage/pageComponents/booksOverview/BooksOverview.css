@@ -1,7 +1,8 @@
 .booksoverview-container{
     flex: 16;
     width: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     justify-content: center;
     align-items: center;
 }
