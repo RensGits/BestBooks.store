@@ -2,6 +2,7 @@ import '../LoginRegisterModal.css'
 import { useAuth } from '../../../../contexts/AuthContext';
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 
 export default function LoginModal(){
 
@@ -29,8 +30,10 @@ export default function LoginModal(){
 
     return(
         <>
-          
           <div className='modal-container'>
+            <div className='modal-close-icon' onClick={() => navigate('/')}>
+                <AiOutlineCloseCircle />
+            </div>
             <h1>Log in</h1>
             {error &&
                 <div className='loginregister-error'>
@@ -47,6 +50,5 @@ export default function LoginModal(){
             </div> 
             <div className='modal-underlay' onClick={() => navigate('/')}></div>
         </>
-        
     )
 }

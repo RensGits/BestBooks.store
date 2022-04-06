@@ -22,6 +22,10 @@
     color: black;
 }
 
+.login-container > svg{
+    display: none;
+}
+
 .register-container{
     margin-right: 1.2em;
 }
@@ -93,3 +97,16 @@
     padding-left: 0.5em;
 }
 
+@media only screen and (max-width: 640px){
+    .login-container > a{
+       display: none;
+   }
+
+   .register-container{
+       display: none;
+   }
+   
+    .login-container > svg{
+       display: unset;
+   }
+}

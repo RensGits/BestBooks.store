@@ -1,0 +1,23 @@
+.filtersexpand-icon{
+    width: 1em;
+    transform: rotate(90deg);
+}
+
+.filter-icon{
+    width: 0.7em;
+    margin-right: 0.2em;
+}
+
+.close{
+    display: none !important;
+}
+
+.open{
+    display: unset !important;
+}
+
+@media only screen and (max-width: 885px){
+    .filtersexpand-icon{
+        transform: unset
+    }
+}

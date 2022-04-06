@@ -10,7 +10,7 @@ export default function NavigationBar(){
     
     return(
         <div className='navigationbar-container'>
-            <ul className='navigationbar-items-container'>
+            <div className='navigationbar-items-container'>
                 <div className='underline-container'>
                     <NavLink to="/" className={activeStyle}>All books</NavLink>
                     {route.pathname ==='/' &&
@@ -23,7 +23,7 @@ export default function NavigationBar(){
                         <Underline cName="underline" />
                     }
                 </div>
-            </ul>
+            </div>
             <SearchBar/>
         </div>
     )

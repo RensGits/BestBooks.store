@@ -12,7 +12,7 @@ export default function SortBy(){ //SORTBY COMPONENT FOR SORTING BOOKS OR ARTICL
 
 
     return(
-        <div className='sortby-container'>
+        <div className='header-alignment-container-sortby'>
             <p>sort by</p>
             <select onChange={handleChange} defaultValue={'rank asc'} className='sortby-select' name="" id="">
                 {

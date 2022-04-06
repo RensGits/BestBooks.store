@@ -2,6 +2,7 @@ import '../LoginRegisterModal.css'
 import { useAuth } from '../../../../contexts/AuthContext';
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 export default function RegisterModal(){
 
@@ -36,6 +37,9 @@ export default function RegisterModal(){
     return(
         <>
             <div className='modal-container'>
+            <div className='modal-close-icon' onClick={() => navigate('/')}>
+                <AiOutlineCloseCircle />
+            </div>
                 <h1>Register</h1>
                 {error &&
                     <div className='loginregister-error'>

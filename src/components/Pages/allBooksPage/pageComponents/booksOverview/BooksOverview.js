@@ -79,7 +79,7 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
     }
 
     return(
-        <div className='booksoverview-container'>
+      <>        <div className='booksoverview-container'>
           {loadingStatus === 'loading' &&
           <div className='spinner-loader'>
               <Oval
@@ -101,11 +101,14 @@ export default function BooksOverview(){    // COMPONENT SHOWING ALL BOOKS ON AL
               {filters && 
                 <>
                  <DisplayedData/>
-                 <ResultsIndicator numberOfResults = {filteredData.length}/>
                 </>
               }
             </div>
+            
           }
         </div>
+        <ResultsIndicator numberOfResults = {filteredData.length}/>
+        </>
+
     )
 }

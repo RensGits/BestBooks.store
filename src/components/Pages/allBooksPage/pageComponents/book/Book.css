@@ -1,11 +1,17 @@
+.book-wrapper{
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+}
+
 .book-container{
     display: flex;
     justify-content: center;
+    text-align: center;
     position: relative;
     align-items: center;
     width: 5em;
     height: 6em;
-    margin-left: 2em;
     overflow: visible
 }
 

@@ -11,10 +11,12 @@ export default function Book(props){ // BOOK COMPONENT FOR SHOWING INDIVIDUAL BO
     }
 
     return(
-        <Link to={`/book-details/${formattedTitle}/`} state={state} className='book-wrapper'  >
-            <div className='book-container'>
-            <img className='book-image' src={props.data.book_image} alt='' />
-            </div>
-        </Link>
+        <div className='book-wrapper'>
+            <Link to={`/book-details/${formattedTitle}/`} state={state} >
+                <div className='book-container'>
+                <img className='book-image' src={props.data.book_image} alt='' />
+                </div>
+            </Link>
+        </div>
     )
 }

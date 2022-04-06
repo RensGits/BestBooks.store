@@ -25,4 +25,14 @@
     color: red;
 }
 
+@media only screen and (max-width: 885px){
+    .navigationbar-container{
+        flex-direction: column;
+        height: 6em;
+    }
+
+    .navigationbar-items-container{
+        align-items: center;
+    }
+}
 

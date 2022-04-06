@@ -14,3 +14,14 @@
         flex: 6
     }
 }
+
+@media only screen and (max-width: 885px){
+    .filters-container{
+        padding: 0 2em;
+        width: 100%;
+        background-color: #F9F9F9;
+        z-index: 5;
+        
+    }
+    
+}

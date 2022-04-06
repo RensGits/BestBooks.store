@@ -52,5 +52,32 @@
     }
   }
 
+  @media only screen and (max-height: 964px){
+    .checkboxes-container{
+        height: 8em;
+    }
+    
+    .checkbox-label{
+        font-size: 0.7rem;
+    }
+
+}
+
+@media only screen and (max-height: 856px){
+    .checkboxes-container{
+        height: 5em;
+    }
+    
+    .checkbox-label{
+        font-size: 0.6rem;
+    }
+
+}
+
+
+
+
+
+
 
 
