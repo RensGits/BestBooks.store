@@ -36,9 +36,10 @@ export default function LoggedIn(){
         <div className='loggedin-container'>
             <p>Hi {currentUser.email}!</p>
         </div>
-        <div className='login-register-icon-container' >
-            <CgProfile />
+        <div style={{width: '1em', margin: '0 1em'}}>
+            <CgProfile style={{width: '0.9em'}}/>
         </div>
+        
         {openProfileOptions &&
             <div className='profileoptions-container'>
                 <Link to={'/profile/my-profile'}>my profile <RiProfileLine className='profile-dropdown-icon' /></Link>

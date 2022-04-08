@@ -1,5 +1,4 @@
 import './LoginRegisterHeader.css';
-import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { useAuth } from '../../../contexts/AuthContext';
 import LoggedOut from './LoggedOut';
 import LoggedIn from './LoggedIn';
